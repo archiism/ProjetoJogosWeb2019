@@ -15,7 +15,7 @@ public class UsuarioDTO implements Serializable{
 	private String cpf;
 	private String dataNascimento;
 	private int nivelAcesso;
-	teste;
+	teste.;
 	
 	public UsuarioDTO()
 	{
