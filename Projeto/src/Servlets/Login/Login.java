@@ -36,6 +36,7 @@ public class Login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String usuario=request.getParameter("txtLogin");
+		String senha=request.getParameter("txtSenha");
 		
 		UsuarioDTO usuarioDTO=new UsuarioDTO();
 		usuarioDTO.setNome(usuario);
