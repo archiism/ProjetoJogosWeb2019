@@ -49,10 +49,10 @@ public class NoticiaDao {
 			if(!VerifiqueConexao())
 				return false;
 			
-			sql="INSERT INTO NOTICIA (TITULO, CONTEUDO, DATA) VALUES (?,?,?)";
+			sql="INSERT INTO NOTICIA (ASSUNTO, TEXTO, DATAPUBLICACAO) VALUES (?,?,?)";
 			PreparedStatement pst=con.prepareStatement(sql);
-			pst.setString(1, noticiaDto.getTitulo());
-			pst.setString(2, noticiaDto.getConteudo());
+			pst.setString(1, noticiaDto.getAssunto());
+			pst.setString(2, noticiaDto.getTexto());
 			pst.setDate(3,this.converte(noticiaDto.getData()));
 			
 			return (pst.executeUpdate() > 0? true:false);
@@ -86,10 +86,10 @@ public class NoticiaDao {
 			if(!VerifiqueConexao())
 				return false;
 
-			sql = "UPDATE NOTICIA SET TITULO=?,CONTEUDO=?, DATA=? WHERE CODIGO = ?";
+			sql = "UPDATE NOTICIA SET ASSUNTO=?,TEXTO=?, DATAPUBLICACAO=? WHERE CODIGO = ?";
 			PreparedStatement pst=con.prepareStatement(sql);
-			pst.setString(1, noticiaDto.getTitulo());
-			pst.setString(2, noticiaDto.getConteudo());
+			pst.setString(1, noticiaDto.getAssunto());
+			pst.setString(2, noticiaDto.getTexto());
 			pst.setDate(3,this.converte(noticiaDto.getData()));
 			pst.setInt(4, noticiaDto.getIdNoticia());
 			

@@ -3,6 +3,7 @@ package Dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
+import Dto.AvaliacaoDto;
 import connection.ConnectionFactory;
 
 public class AvaliacaoDao {
@@ -32,14 +33,13 @@ public class AvaliacaoDao {
 			if(!VerifiqueConexao())
 				return false;
 			
-			int idUsuario;
-			int idJogo;
+			
 			
 			sql="INSERT INTO AVALIACAO(NOTA, idUsuario, idJogo) VALUES(?,?,?)";
 			pst=con.prepareStatement(sql);
-			pst.setInt(1, avaliacaoDto.getNota());
-			pst.setInt(2, idUsuario);
-			pst.setInt(3, idJogo);
+			pst.setInt(1, avaliacaoDto.getIdAvaliacao());
+			pst.setInt(2, avaliacaoDto.getIdUsuario());
+			pst.setInt(3, avaliacaoDto.getIdJogo());
 			return pst.executeUpdate() > 0 ? true:false;
 		}catch(Exception e)
 		{

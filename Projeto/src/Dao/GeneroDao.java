@@ -37,7 +37,7 @@ public class GeneroDao {
 			
 			sql="INSERT INTO GENERO (NOME) VALUES (?)";
 			pst=con.prepareStatement(sql);
-			pst.setString(1, generoDto.getNome);
+			pst.setString(1, generoDto.getNome());
 			return (pst.executeUpdate() > 0? true:false);
 		} catch (Exception e) 
 		{
@@ -53,7 +53,7 @@ public class GeneroDao {
 
 			sql = "UPDATE GENERO SET NOME=?, WHERE CODIGO = ?";
 			pst=con.prepareStatement(sql);
-			pst.setString(1, generoDto.getNome);
+			pst.setString(1, generoDto.getNome());
 			return (pst.executeUpdate() > 0 ? true : false);
 
 		}

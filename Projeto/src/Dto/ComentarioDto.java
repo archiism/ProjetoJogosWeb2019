@@ -5,7 +5,14 @@ public class ComentarioDto {
 	private String comentario;
 	private int idJogo;
 	private int idUsuario;
+	private String data;
 	
+	public String getData() {
+		return data;
+	}
+	public void setData(String data) {
+		this.data = data;
+	}
 	public int getIdComentario() {
 		return idComentario;
 	}

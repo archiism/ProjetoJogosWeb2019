@@ -3,6 +3,7 @@ package Dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
+import Dto.FavoritosDto;
 import connection.ConnectionFactory;
 
 public class FavoritoDao {
@@ -25,7 +26,7 @@ public class FavoritoDao {
 		return true;
 	}
 	
-	public Boolean Incluir(Boolean fav) throws Exception
+	public Boolean Incluir(FavoritosDto favoritosDto) throws Exception
 	{
 		try
 		{
@@ -37,9 +38,9 @@ public class FavoritoDao {
 			
 			sql="INSERT INTO FAVORITOS(IDJOGO, IDUSUARIO, FAVORITO) VALUES(?,?,?)";
 			pst=con.prepareStatement(sql);
-			pst.setInt(1, idJogo);
-			pst.setInt(2, idUsuario);
-			pst.setBoolean(3, fav);
+			pst.setInt(1, favoritosDto.getIdJogo());
+			pst.setInt(2, favoritosDto.getIdUsuario());
+			pst.setBoolean(3, favoritosDto.getFavorito());
 			return pst.executeUpdate()> 0 ? true:false;
 			
 		}catch(Exception e)

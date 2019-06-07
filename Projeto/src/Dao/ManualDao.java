@@ -3,6 +3,7 @@ package Dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
+import Dto.ManualDto;
 import connection.ConnectionFactory;
 
 public class ManualDao {
@@ -35,8 +36,8 @@ public class ManualDao {
 			
 			sql="INSERT INTO MANUAL (controle, objetivo) VALUES (?,?)";
 			pst=con.prepareStatement(sql);
-			pst.setString(1, manualDto.getControle);
-			pst.setString(2,manualDto.getObjetivo);
+			pst.setString(1, manualDto.getControle());
+			pst.setString(2,manualDto.getObjetivo());
 			
 			return (pst.executeUpdate() > 0? true:false);
 		} catch (Exception e) 
