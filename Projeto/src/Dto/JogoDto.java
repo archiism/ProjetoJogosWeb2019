@@ -2,7 +2,7 @@ package Dto;
 
 import java.io.Serializable;
 
-public class JogoDTO implements Serializable {
+public class JogoDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -12,8 +12,10 @@ public class JogoDTO implements Serializable {
 	private String descricao;
 	private String classificacao;
 	private String dificuldade;
+	private String caminhoHtml;
+	private int quantidadeJogada;
 	
-	public JogoDTO()
+	public JogoDto()
 	{
 		
 	}
@@ -64,6 +66,22 @@ public class JogoDTO implements Serializable {
 
 	public void setDificuldade(String dificuldade) {
 		this.dificuldade = dificuldade;
+	}
+
+	public String getCaminhoHtml() {
+		return caminhoHtml;
+	}
+
+	public void setCaminhoHtml(String caminhoHtml) {
+		this.caminhoHtml = caminhoHtml;
+	}
+
+	public int getQuantidadeJogada() {
+		return quantidadeJogada;
+	}
+
+	public void setQuantidadeJogada(int quantidadeJogada) {
+		this.quantidadeJogada = quantidadeJogada;
 	}
 	
 	

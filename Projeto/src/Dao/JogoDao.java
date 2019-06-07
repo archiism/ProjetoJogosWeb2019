@@ -1,9 +1,11 @@
 package Dao;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-import Dto.JogoDTO;
+import Dto.JogoDto;
 import connection.ConnectionFactory;
 
 public class JogoDao {
@@ -26,7 +28,7 @@ public class JogoDao {
 		return true;
 	}
 	
-	public Boolean Incluir(JogoDTO jogoDto) throws Exception
+	public Boolean Incluir(JogoDto jogoDto) throws Exception
 	{
 		try
 		{
@@ -39,7 +41,7 @@ public class JogoDao {
 			sql="INSERT INTO JOGO (NOME, DIFICULDADE, CAMINHO, QUANTIDADEJOGADA, IDGENERO, IDMANUAL) VALUES(?,?,?,?,?)";
 			pst=con.prepareStatement(sql);
 			pst.setString(1, jogoDto.getNome());
-			pst.setInt(2, jogoDto.getDificuldade());
+			pst.setString(2, jogoDto.getDificuldade());
 			pst.setString(3, jogoDto.getCaminhoHtml());
 			pst.setInt(4, jogoDto.getQuantidadeJogada());
 			pst.setInt(5, idGenero);
@@ -50,6 +52,11 @@ public class JogoDao {
 		{
 			throw new Exception(e.getMessage());
 		}
+	}
+	
+	public List<JogoDto> Listar()
+	{
+		
 	}
 
 }
