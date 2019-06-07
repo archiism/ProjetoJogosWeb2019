@@ -11,6 +11,7 @@ public class GeneroDao {
 	
 	private Connection con=null;
 	private String sql="";
+	private PreparedStatement pst;
 	
 	public Boolean VerifiqueConexao() throws Exception {
 		try
@@ -35,7 +36,7 @@ public class GeneroDao {
 				return false;
 			
 			sql="INSERT INTO GENERO (NOME) VALUES (?)";
-			PreparedStatement pst=con.prepareStatement(sql);
+			pst=con.prepareStatement(sql);
 			pst.setString(1, generoDto.getNome);
 			return (pst.executeUpdate() > 0? true:false);
 		} catch (Exception e) 
@@ -51,12 +52,28 @@ public class GeneroDao {
 				return false;
 
 			sql = "UPDATE GENERO SET NOME=?, WHERE CODIGO = ?";
-			PreparedStatement pst=con.prepareStatement(sql);
+			pst=con.prepareStatement(sql);
 			pst.setString(1, generoDto.getNome);
 			return (pst.executeUpdate() > 0 ? true : false);
 
 		}
 		catch (SQLException e)
+		{
+			throw new Exception("Não foi possível executar o comando " + sql + ". ERRO: " + e);
+		}
+	}
+	public Boolean Excluir(int cod) throws Exception
+	{
+		try
+		{
+			if(!VerifiqueConexao())
+				return false;
+			
+			sql="DELETE FROM GENERO WHERE ID=?";
+			pst=con.prepareStatement(sql);
+			pst.setInt(1, cod);
+			return pst.executeUpdate()>0?true:false;
+		}catch(SQLException e)
 		{
 			throw new Exception("Não foi possível executar o comando " + sql + ". ERRO: " + e);
 		}
