@@ -14,6 +14,8 @@ public class JogoDto implements Serializable {
 	private String dificuldade;
 	private String caminhoHtml;
 	private int quantidadeJogada;
+	private int idGenero;
+	private int idManual;
 	
 	public JogoDto()
 	{
@@ -82,6 +84,22 @@ public class JogoDto implements Serializable {
 
 	public void setQuantidadeJogada(int quantidadeJogada) {
 		this.quantidadeJogada = quantidadeJogada;
+	}
+
+	public int getIdGenero() {
+		return idGenero;
+	}
+
+	public void setIdGenero(int idGenero) {
+		this.idGenero = idGenero;
+	}
+
+	public int getIdManual() {
+		return idManual;
+	}
+
+	public void setIdManual(int idManual) {
+		this.idManual = idManual;
 	}
 	
 	

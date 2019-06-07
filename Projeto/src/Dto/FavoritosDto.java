@@ -6,6 +6,8 @@ public class FavoritosDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int idFavoritos;
 	private Boolean favorito;
+	private int idJogo;
+	private int idUsuario;
 	
 	public FavoritosDto()
 	{
@@ -26,6 +28,22 @@ public class FavoritosDto implements Serializable {
 
 	public void setIdFavoritos(int idFavoritos) {
 		this.idFavoritos = idFavoritos;
+	}
+
+	public int getIdJogo() {
+		return idJogo;
+	}
+
+	public void setIdJogo(int idJogo) {
+		this.idJogo = idJogo;
+	}
+
+	public int getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 	
 	
