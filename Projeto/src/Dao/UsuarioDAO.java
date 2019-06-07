@@ -88,12 +88,11 @@ public class UsuarioDAO {
 			if(!VerifiqueConexao())
 				return false;
 			
-			sql="INSERT INTO USUARIO (nome,senha,login,telefone,email,cpf,dataNascimento,nivelAcesso) VALUES (?,?,?,?,?,?,?,?);";
+			sql="INSERT INTO USUARIO (nome,senha,login,email,cpf,dataNascimento,nivelAcesso) VALUES (?,?,?,?,?,?,?);";
 			pst=con.prepareStatement(sql);
 			pst.setString(1, usuarioDTO.getNome());
 			pst.setString(2, usuarioDTO.getSenha());
 			pst.setString(3, usuarioDTO.getLogin());
-			pst.setString(4, usuarioDTO.getTelefone());
 			pst.setString(5, usuarioDTO.getEmail());
 			pst.setString(6, usuarioDTO.getCpf());
 			pst.setDate(7, this.converte(usuarioDTO.getDataNascimento()));
