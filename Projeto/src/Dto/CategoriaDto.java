@@ -1,6 +1,6 @@
 package Dto;
 
-public class CategoriaDTO {
+public class CategoriaDto {
 	private int idCategoria;
 	private String nome;
 	

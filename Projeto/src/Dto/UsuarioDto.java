@@ -3,7 +3,7 @@ package Dto;
 import java.io.Serializable;
 import java.sql.Date;
 
-public class UsuarioDTO implements Serializable{
+public class UsuarioDto implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private int idUsuario;
@@ -16,7 +16,7 @@ public class UsuarioDTO implements Serializable{
 	private String dataNascimento;
 	private int nivelAcesso;
 	
-	public UsuarioDTO()
+	public UsuarioDto()
 	{
 		
 	}

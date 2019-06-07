@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Dao.UsuarioDAO;
-import Dto.UsuarioDTO;
+import Dto.UsuarioDto;
 
 
 @WebServlet("/Login")
@@ -38,7 +38,7 @@ public class Login extends HttpServlet {
 		String usuario=request.getParameter("txtLogin");
 		String senha=request.getParameter("txtSenha");
 		
-		UsuarioDTO usuarioDTO=new UsuarioDTO();
+		UsuarioDto usuarioDTO=new UsuarioDto();
 		usuarioDTO.setNome(usuario);
 		
 		UsuarioDAO user=new UsuarioDAO();

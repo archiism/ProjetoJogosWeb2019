@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 
-import Dto.UsuarioDTO;
+import Dto.UsuarioDto;
 import connection.ConnectionFactory;
 
 public class UsuarioDAO {
@@ -46,9 +46,9 @@ public class UsuarioDAO {
 		return true;
 	}
 	
-	public UsuarioDTO Login(UsuarioDTO usuarioDTO) throws Exception
+	public UsuarioDto Login(UsuarioDto usuarioDTO) throws Exception
 	{
-		UsuarioDTO dto=null;
+		UsuarioDto dto=null;
 		
 		try
 		{
@@ -65,7 +65,7 @@ public class UsuarioDAO {
 			{
 				if(rs.getString("Login").equals(usuarioDTO.getLogin()) && rs.getString("Senha").equals(usuarioDTO.getSenha()))
 				{
-					dto=new UsuarioDTO();
+					dto=new UsuarioDto();
 					dto.setLogin(rs.getString("Login"));
 					dto.setNome(rs.getString("Nome"));
 					dto.setLogin(rs.getString("Login"));
@@ -81,7 +81,7 @@ public class UsuarioDAO {
 		
 	}
 	
-	public Boolean incluir(UsuarioDTO usuarioDTO) throws Exception
+	public Boolean incluir(UsuarioDto usuarioDTO) throws Exception
 	{
 		try 
 		{
