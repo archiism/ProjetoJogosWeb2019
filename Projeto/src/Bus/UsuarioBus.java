@@ -19,5 +19,16 @@ public class UsuarioBus {
 		}
 		 
 	}
+	
+	public Boolean Incluir(UsuarioDto usuarioDto) throws Exception
+	{
+		try
+		{
+			return usuarioDAO.incluir(usuarioDto);
+		}catch(Exception e)
+		{
+			throw new Exception(e.getMessage());
+		}
+	}
 
 }

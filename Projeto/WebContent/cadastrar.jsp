@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="./Contents/css/style.css">
 </head>
 <body>
 
@@ -39,7 +39,7 @@
 
     <!-- -->
 
-<form method="post" action="/Projeto/CadUsuario">
+<form method="post" action="/Projeto/Cadastrar">
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="validationDefault01">Nome</label>
