@@ -2,6 +2,8 @@ package Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
 
 import Dto.FavoritosDto;
 import connection.ConnectionFactory;
@@ -61,6 +63,23 @@ public class FavoritoDao {
 			pst=con.prepareStatement(sql);
 			pst.setBoolean(1, cod);
 			return pst.executeUpdate() > 0 ? true:false;
+		}catch(Exception e)
+		{
+			throw new Exception(e.getMessage());
+		}
+	}
+	
+	public List<FavoritosDto> Listar() throws Exception
+	{
+		List<FavoritosDto> favoritos = new ArrayList<FavoritosDto>();
+		FavoritosDto favoritosDto=null;
+		try
+		{
+			if(!VerifiqueConexao())
+				return favoritos;
+			
+			sql="SELECT JOGO.NOME, JOGO.DIFICULDADE, JOGO.MANUAL, JOGO.CAMINHOHTML FROM JOGO, FAVORITOS, USUARIO WHERE JOGO.IDJOGO=FAVORITOS.IDJOGO AND FAVORITOS.IDUSUARIO=USUARIO.IDUSUARIO";
+			
 		}catch(Exception e)
 		{
 			throw new Exception(e.getMessage());
