@@ -10,7 +10,6 @@ public class UsuarioDto implements Serializable{
 	private String nome;
 	private String senha;
 	private String login;
-	private String telefone;
 	private String email;
 	private String cpf;
 	private String dataNascimento;
@@ -44,12 +43,7 @@ public class UsuarioDto implements Serializable{
 	public void setLogin(String login) {
 		this.login = login;
 	}
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
+	
 	public String getEmail() {
 		return email;
 	}

@@ -16,6 +16,7 @@ public class UsuarioDAO {
 	private String sql="";
 	PreparedStatement pst;
 	ResultSet rs;
+	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	
 	public Date converte(String data) {    
@@ -69,6 +70,12 @@ public class UsuarioDAO {
 					dto.setLogin(rs.getString("Login"));
 					dto.setNome(rs.getString("Nome"));
 					dto.setLogin(rs.getString("Login"));
+					dto.setCpf(rs.getString("Cpf"));
+					dto.setEmail(rs.getString("Email"));
+					dto.setIdUsuario(rs.getInt("idUsuario"));
+					dto.setNivelAcesso(rs.getInt("nivelAcesso"));
+					dto.setDataNascimento(sdf.format(rs.getDate("DATANASCIMENTO")));
+					
 					return dto;
 				}
 			}

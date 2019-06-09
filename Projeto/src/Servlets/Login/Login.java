@@ -1,12 +1,16 @@
 package Servlets.Login;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import Bus.UsuarioBus;
 import Dao.UsuarioDAO;
 import Dto.UsuarioDto;
 
@@ -14,6 +18,8 @@ import Dto.UsuarioDto;
 @WebServlet("/Login")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private UsuarioBus usuarioBus=new UsuarioBus();
+	private UsuarioDto usuarioDto = new UsuarioDto();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -37,15 +43,28 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String usuario=request.getParameter("txtLogin");
 		String senha=request.getParameter("txtSenha");
-		
-		UsuarioDto usuarioDTO=new UsuarioDto();
-		usuarioDTO.setNome(usuario);
-		
-		UsuarioDAO user=new UsuarioDAO();
-		try {
-			user.incluir(usuarioDTO);
+		request.setAttribute("dados", "hidden");
+		usuarioDto.setLogin(usuario);
+		usuarioDto.setSenha(senha);
+		try 
+		{
+			HttpSession sessao = request.getSession(true);
+			UsuarioDto user=usuarioBus.Login(usuarioDto);
+			
+			if(user!=null)
+			{
+				sessao.setMaxInactiveInterval(60);
+				sessao.setAttribute("usuarioLogado", user);
+				
+				
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/menu.jsp");
+				rd.forward(request, response);
+				//response.sendRedirect("menu.jsp");
+			}
+			
+			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}

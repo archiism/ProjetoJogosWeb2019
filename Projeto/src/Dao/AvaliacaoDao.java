@@ -46,5 +46,22 @@ public class AvaliacaoDao {
 			throw new Exception("Não foi possível executar o comando "+e);
 		}
 	}
+	
+	public Boolean Alterar(int cod) throws Exception
+	{
+		try
+		{
+			if(!VerifiqueConexao())
+				return false;
+			
+			sql="UPDATE AVALIACAO SET NOTA=?";
+			pst=con.prepareStatement(sql);
+			pst.setInt(1, cod);
+			return pst.executeUpdate() > 0 ? true:false;
+		}catch(Exception e)
+		{
+			throw new Exception("Não foi possível executar o comando "+e);
+		}
+	}
 
 }

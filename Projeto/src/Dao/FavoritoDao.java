@@ -48,5 +48,23 @@ public class FavoritoDao {
 			throw new Exception(e.getMessage());
 		}
 	}
+	
+	public Boolean Alterar(Boolean cod) throws Exception
+	{
+		try
+		{
+			if(!VerifiqueConexao())
+				return false;
+			
+			
+			sql="UPDATE FAVORITOS SET FAVORITO=?";
+			pst=con.prepareStatement(sql);
+			pst.setBoolean(1, cod);
+			return pst.executeUpdate() > 0 ? true:false;
+		}catch(Exception e)
+		{
+			throw new Exception(e.getMessage());
+		}
+	}
 
 }
