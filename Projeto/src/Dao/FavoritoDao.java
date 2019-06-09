@@ -2,16 +2,19 @@ package Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
 import Dto.FavoritosDto;
+import Dto.JogoDto;
 import connection.ConnectionFactory;
 
 public class FavoritoDao {
 	private Connection con=null;
 	private String sql="";
-	PreparedStatement pst;
+	private PreparedStatement pst;
+	private ResultSet rs;
 	
 	public Boolean VerifiqueConexao() throws Exception {
 		try
@@ -69,21 +72,38 @@ public class FavoritoDao {
 		}
 	}
 	
-	public List<FavoritosDto> Listar() throws Exception
+	public List<JogoDto> Listar(int cod) throws Exception
 	{
-		List<FavoritosDto> favoritos = new ArrayList<FavoritosDto>();
-		FavoritosDto favoritosDto=null;
+		List<JogoDto> favoritos = new ArrayList<JogoDto>();
+		JogoDto jogoDto=null;
 		try
 		{
 			if(!VerifiqueConexao())
 				return favoritos;
 			
-			sql="SELECT JOGO.NOME, JOGO.DIFICULDADE, JOGO.MANUAL, JOGO.CAMINHOHTML FROM JOGO, FAVORITOS, USUARIO WHERE JOGO.IDJOGO=FAVORITOS.IDJOGO AND FAVORITOS.IDUSUARIO=USUARIO.IDUSUARIO";
+			sql="SELECT JOGO.NOME, JOGO.DIFICULDADE, JOGO.MANUAL, JOGO.CAMINHOHTML"+
+			" FROM JOGO, FAVORITOS, USUARIO WHERE JOGO.IDJOGO=FAVORITOS.IDJOGO"+
+			" AND FAVORITOS.IDUSUARIO=USUARIO.IDUSUARIO AND IDUSUARIO=? AND FAVORITOS=TRUE";
 			
+			pst=con.prepareStatement(sql);
+			pst.setInt(1, cod);
+			rs = pst.executeQuery();
+			jogoDto.setCaminhoHtml(rs.getString(""));
+			jogoDto.setIdJogo(rs.getInt(""));
+			jogoDto.setManual(rs.getString(""));
+			jogoDto.setNome(rs.getString(""));
+			jogoDto.setDificuldade(rs.getString(""));
+			
+			while(rs.next())
+			{
+				jogoDto = new JogoDto();
+				favoritos.add(jogoDto);
+			}
 		}catch(Exception e)
 		{
 			throw new Exception(e.getMessage());
 		}
+		return favoritos;
 	}
 
 }
