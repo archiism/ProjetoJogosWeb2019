@@ -17,6 +17,7 @@ import Dto.UsuarioDto;
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UsuarioBus usuarioBus=new UsuarioBus();
+	private UsuarioDto usuarioDto = new UsuarioDto();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -41,10 +42,19 @@ public class Login extends HttpServlet {
 		String usuario=request.getParameter("txtLogin");
 		String senha=request.getParameter("txtSenha");
 		
-		
+		usuarioDto.setLogin(usuario);
+		usuarioDto.setSenha(senha);
 		try 
 		{
 			HttpSession sessao = request.getSession(true);
+			UsuarioDto user=usuarioBus.Login(usuarioDto);
+			
+			if(user!=null)
+			{
+				sessao.setMaxInactiveInterval(60);
+				sessao.setAttribute("usuarioLogado", user);
+				response.sendRedirect("");
+			}
 			
 			
 		} catch (Exception e) {
