@@ -270,7 +270,7 @@
        /* width: 75%;
        height: 100%; */
        margin-left: 20%;
-       height: 750px;
+       height: auto;
        margin-top: 1%;
        width: 68%;
        border-radius: 10px;
@@ -551,7 +551,7 @@
 #JogoView{
     width: 800px;
     height: 600px;
-    background-color: #000000;
+    z-index: 2;
     margin-left: 20%;
     margin-top: 8%;
 }
@@ -571,4 +571,56 @@
 .postCard h1{
     font-size: 40px;
     align-items: center;
+}
+.comentarios{
+    background-color: steelblue;
+    
+    border:solid;
+    border-color: darkblue;
+}
+.comentarios h1{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    
+    
+}
+.cardcoment h2{
+    font-size:20px;
+    color:white;
+    font-weight:bold;
+    text-align: center;
+
+}
+.cardcoment{
+    background-color: darkgrey;
+    border:solid;
+    border-width: 6px;
+}
+.assinatura{
+    font-size: 14px;
+    font-weight:bold;
+    
+}
+.myButton8 {
+    width:1300px;
+    background-color:#78cafa;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    border:4px solid steelblue;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    padding:12px 23px;
+    text-decoration:none;
+}
+.myButton8:hover {
+    background-color:#0088ff;
+}
+.myButton8:active {
+    position:relative;
+    top:1px;
 }
