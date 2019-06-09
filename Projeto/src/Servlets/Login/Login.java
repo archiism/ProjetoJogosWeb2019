@@ -6,7 +6,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import Bus.UsuarioBus;
 import Dao.UsuarioDAO;
 import Dto.UsuarioDto;
 
@@ -14,6 +16,7 @@ import Dto.UsuarioDto;
 @WebServlet("/Login")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private UsuarioBus usuarioBus=new UsuarioBus();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -38,14 +41,14 @@ public class Login extends HttpServlet {
 		String usuario=request.getParameter("txtLogin");
 		String senha=request.getParameter("txtSenha");
 		
-		UsuarioDto usuarioDTO=new UsuarioDto();
-		usuarioDTO.setNome(usuario);
 		
-		UsuarioDAO user=new UsuarioDAO();
-		try {
-			user.incluir(usuarioDTO);
+		try 
+		{
+			HttpSession sessao = request.getSession(true);
+			
+			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}

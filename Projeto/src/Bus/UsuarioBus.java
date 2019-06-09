@@ -1,8 +1,8 @@
-package Business;
+package Bus;
 
 import Dao.UsuarioDAO;
 
-public class UsuarioBusiness {
+public class UsuarioBus {
 	
 	private UsuarioDAO usuarioDAO = new UsuarioDAO();
 
