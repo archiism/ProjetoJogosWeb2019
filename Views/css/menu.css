@@ -209,8 +209,8 @@
   	-webkit-transform: scale(1.8); /* Safari and Chrome */
   	-o-transform: scale(2); /* Opera */
 	transform: scale(1.5);
-	padding: 5px;
-	margin-left: 10px;
+	
+	margin-left: 1px;
 	font-family: arial;
     color:green;
     
@@ -278,9 +278,16 @@
 	/* opacity: 0.8; */
 	
 }
+.tituloCard{
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 15px;
+	text-align: center;
+	color: #000000;
+	font-weight: bold;
+}
 .cardGames{
 	width: 200px;
-	height: 250px;
+	height: 350px;
 	background-color: white;
 	padding: 2px;	
 	border:solid;
@@ -297,8 +304,13 @@
 	border-width: 2px;
 	border-color: steelblue;
 	border-radius: 5px;
+	background-image: url('../imagens/marioPre.png');
+	/* opacity: 0.5; */
 	
 	
+}
+.card img{
+	opacity: 0.2;
 }
 .myButton3 {
 	background-color:#78cafa;
@@ -311,7 +323,7 @@
 	color:#ffffff;
 	font-family:Arial;
 	font-size:15px;
-	padding:12px 23px;
+	/* padding:12px 23px; */
 	text-decoration:none;
 	width: 200px;
 	height: 50px;
@@ -328,8 +340,8 @@
 	position: fixed;
 	color: white;
 	background-color: white;
-	width: 800px;
-	height: 700px;
+	width: 900px;
+	height: 500px;
 	margin-left: 47%;
 	margin-top:3%;
 	border: solid;
@@ -388,7 +400,7 @@
 #attP{
 	text-align: center;
 	color:white;
-	font-size: 20px;
+	font-size: 30px;
 	font-weight: bold;
 }
 .myButton4 {
@@ -497,4 +509,35 @@ label{
 .postCard p{
 	margin-left: 20px;
 	
+}
+.areainput{
+	margin-left: 20px;
+	border-width:2px;
+	border-radius:5px;
+	border-style:solid;
+	border-color:#000000;
+	font-weight:bold;
+	text-align:left;
+	font-size:16px;
+	outline:none;
+}
+/* #imgCard{
+	width: 181px;
+	height: 170px;
+	z-index: -1;
+	position: relative;
+} */
+.testeFoto{
+	color: black;
+	font-weight: bold;
+	
+	
+}
+.PButao{
+	margin-top: -130px;
+	margin-left: 20px;
+}
+.alinha{
+	margin-top: 20px;
+	margin-left: -14px;
 }
