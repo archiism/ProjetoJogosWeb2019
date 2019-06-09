@@ -88,15 +88,17 @@ public class FavoritoDao {
 			pst=con.prepareStatement(sql);
 			pst.setInt(1, cod);
 			rs = pst.executeQuery();
-			jogoDto.setCaminhoHtml(rs.getString(""));
-			jogoDto.setIdJogo(rs.getInt(""));
-			jogoDto.setManual(rs.getString(""));
-			jogoDto.setNome(rs.getString(""));
-			jogoDto.setDificuldade(rs.getString(""));
+			
+			
 			
 			while(rs.next())
 			{
 				jogoDto = new JogoDto();
+				jogoDto.setCaminhoHtml(rs.getString("CAMINHOHTML"));
+				jogoDto.setIdJogo(rs.getInt("IDJOGO"));
+				jogoDto.setManual(rs.getString("MANUAL"));
+				jogoDto.setNome(rs.getString("NOME"));
+				jogoDto.setDificuldade(rs.getString("DIFICULDADE"));
 				favoritos.add(jogoDto);
 			}
 		}catch(Exception e)
