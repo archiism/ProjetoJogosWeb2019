@@ -548,3 +548,27 @@
 #myButton5{
     
 }
+#JogoView{
+    width: 800px;
+    height: 600px;
+    background-color: #000000;
+    margin-left: 20%;
+    margin-top: 8%;
+}
+#JH1{
+    font-size: 60px;
+    color: white;
+    text-align: center;
+}
+#instru{
+    font-size: 30px;
+    width: 800px;
+    height: 200px;
+    background-color: white;
+    border:solid;
+
+}
+.postCard h1{
+    font-size: 40px;
+    align-items: center;
+}
