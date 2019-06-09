@@ -3,8 +3,12 @@ package Dao;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
 import Dto.NoticiaDto;
 import connection.ConnectionFactory;
 
@@ -12,10 +16,12 @@ public class NoticiaDao {
 	
 	private Connection con=null;
 	private String sql="";
-	
+	private PreparedStatement pst;
+	private ResultSet rs;
+	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	public Date converte(String data) {    
-		SimpleDateFormat forma = new SimpleDateFormat("dd/MM/yyyy");
+		 SimpleDateFormat forma = new SimpleDateFormat("dd/MM/yyyy");
 		Date dataRetorno = null;
 		
 		try {
@@ -87,7 +93,7 @@ public class NoticiaDao {
 				return false;
 
 			sql = "UPDATE NOTICIA SET ASSUNTO=?,TEXTO=?, DATAPUBLICACAO=? WHERE CODIGO = ?";
-			PreparedStatement pst=con.prepareStatement(sql);
+			pst=con.prepareStatement(sql);
 			pst.setString(1, noticiaDto.getAssunto());
 			pst.setString(2, noticiaDto.getTexto());
 			pst.setDate(3,this.converte(noticiaDto.getData()));
@@ -100,5 +106,35 @@ public class NoticiaDao {
 		{
 			throw new Exception("Não foi possível executar o comando " + sql + ". ERRO: " + e);
 		}
+	}
+	
+	public List<NoticiaDto> Listar()throws Exception
+	{
+		List<NoticiaDto> noticias= new ArrayList<NoticiaDto>();
+		NoticiaDto noticiaDto=null;
+		
+		try
+		{
+			if(!VerifiqueConexao())
+				return noticias;
+			sql="SELECT * FROM NOTICIA";
+			pst=con.prepareStatement(null);
+			rs=pst.executeQuery();
+			
+			while(rs.next())
+			{
+				noticiaDto = new NoticiaDto();
+				noticiaDto.setAssunto(rs.getString("ASSUNTO"));
+				noticiaDto.setTexto(rs.getString("TEXTO"));
+				Date data=rs.getDate("DATAPUBLICACAO");
+				noticiaDto.setData(sdf.format(data));
+				
+				noticias.add(noticiaDto);
+			}
+		}catch(Exception e)
+		{
+			throw new Exception("Não foi possível executar o comando " + sql + ". ERRO: " + e);
+		}
+		return noticias;
 	}
 }
