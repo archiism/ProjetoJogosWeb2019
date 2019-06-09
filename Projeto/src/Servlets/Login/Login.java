@@ -1,6 +1,8 @@
 package Servlets.Login;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,7 +43,7 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String usuario=request.getParameter("txtLogin");
 		String senha=request.getParameter("txtSenha");
-		
+		request.setAttribute("dados", "hidden");
 		usuarioDto.setLogin(usuario);
 		usuarioDto.setSenha(senha);
 		try 
@@ -53,7 +55,11 @@ public class Login extends HttpServlet {
 			{
 				sessao.setMaxInactiveInterval(60);
 				sessao.setAttribute("usuarioLogado", user);
-				response.sendRedirect("");
+				
+				
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/menu.jsp");
+				rd.forward(request, response);
+				//response.sendRedirect("menu.jsp");
 			}
 			
 			
