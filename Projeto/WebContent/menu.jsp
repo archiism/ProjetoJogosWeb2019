@@ -24,6 +24,7 @@
      
        <c:if test="${sessionScope.usuarioLogado.getNivelAcesso()!=0 }">
         <button class="btn btn-primary navbar-btn ">Lista de usuarios</button>
+        <button class="btn btn-primary navbar-btn " data-toggle="modal" data-target="#noticia">Inserir Noticia </button>
       <button class="btn btn-primary navbar-btn " data-toggle="modal" data-target="#myModal">Cadastrar Jogo </button>
        </c:if>
       
@@ -143,6 +144,47 @@
 </div>
 </form>
 
+<!-- Outro Modal -->
+<form method="Post" action="/Projeto/CadNoticia">
+<!-- The Modal -->
+<div class="modal fade" id="noticia">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Inserir Noticia</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+
+<div class="form-group">
+    <label for="nome">Titulo:</label>
+    <input type="text" class="form-control" id="nome" name="txtTitulo">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Assunto:</label>
+    <textarea class="form-control" rows="10" name="txtAsunto">
+  </textarea>
+  
+
+      <!--Fim Modal body -->
+      <div class="modal-body">
+        
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-primary" value="Salvar">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+</form>
+<!--  fim -->
   </div>
 </div>
 </div>
