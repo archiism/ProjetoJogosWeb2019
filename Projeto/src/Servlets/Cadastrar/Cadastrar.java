@@ -34,13 +34,14 @@ public class Cadastrar extends HttpServlet {
 		String senha=request.getParameter("txtSenha");
 		String email=request.getParameter("txtEmail");
 		String data=request.getParameter("txtData");
+		int nvl=0;
 		
 		usuarioDto.setNome(nome);
 		usuarioDto.setCpf(cpf);
 		usuarioDto.setDataNascimento(data);
 		usuarioDto.setEmail(email);
 		usuarioDto.setLogin(login);
-		usuarioDto.setNivelAcesso(0);
+		usuarioDto.setNivelAcesso(nvl);
 		usuarioDto.setSenha(senha);
 		
 		try

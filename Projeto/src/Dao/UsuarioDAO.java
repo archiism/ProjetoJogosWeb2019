@@ -17,12 +17,12 @@ public class UsuarioDAO {
 	PreparedStatement pst;
 	ResultSet rs;
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	Date d=null;
 	
-	
-	public Date converte(String data) {    
+	public Date converte(String datas) {    
 		SimpleDateFormat forma = new SimpleDateFormat("dd/MM/yyyy");
 		Date dataRetorno = null;
-		
+		String data=datas.replaceAll("-", "/");
 		try {
 			dataRetorno = new Date(forma.parse(data).getTime());
 		} catch (java.text.ParseException e) {
@@ -100,14 +100,17 @@ public class UsuarioDAO {
 			pst.setString(1, usuarioDTO.getNome());
 			pst.setString(2, usuarioDTO.getSenha());
 			pst.setString(3, usuarioDTO.getLogin());
-			pst.setString(5, usuarioDTO.getEmail());
-			pst.setString(6, usuarioDTO.getCpf());
-			pst.setDate(7, this.converte(usuarioDTO.getDataNascimento()));
-			pst.setInt(8, usuarioDTO.getNivelAcesso());
+			pst.setString(4, usuarioDTO.getEmail());
+			pst.setString(5, usuarioDTO.getCpf());
+			d=converte(usuarioDTO.getDataNascimento());
+			//pst.setString(6, usuarioDTO.getDataNascimento());
+			pst.setInt(7, usuarioDTO.getNivelAcesso());
+			
 			return(pst.executeUpdate() > 0?true:false);
 			
 		} catch (SQLException e) {
 			throw new Exception("Não foi possível executar o comando "+e);
 		}
+		
 	}
 }
