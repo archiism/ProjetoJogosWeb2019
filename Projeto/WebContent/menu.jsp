@@ -67,7 +67,10 @@
 
     <div class="form-group">
   <label for="comment">Noticias</label>
-  <textarea class="form-control" rows="10" id="comment"></textarea>
+  <textarea class="form-control" rows="10" id="comment">${noti.assunto} ( ${noti.data } )
+  
+  
+  ${ noti.texto}</textarea>
 </div>
 
     <div class="text-center">
@@ -165,7 +168,7 @@
   </div>
   <div class="form-group">
     <label for="pwd">Assunto:</label>
-    <textarea class="form-control" rows="10" name="txtAsunto">
+    <textarea class="form-control" rows="10" name="txtAssunto">
   </textarea>
   
 

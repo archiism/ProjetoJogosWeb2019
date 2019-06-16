@@ -85,19 +85,19 @@ public class NoticiaDao {
 			throw new Exception("Não foi possível executar o comando " + sql + ". ERRO: " + e);
 		}
 	}
-	
+	//-------------------------------------------------------------------
 	public Boolean Alterar(NoticiaDto noticiaDto) throws Exception {
 		try
 		{
 			if(!VerifiqueConexao())
 				return false;
 
-			sql = "UPDATE NOTICIA SET ASSUNTO=?,TEXTO=?, DATAPUBLICACAO=? WHERE CODIGO = ?";
+			sql = "UPDATE NOTICIA SET ASSUNTO=?,TEXTO=?, DATAPUBLICACAO=?";
 			pst=con.prepareStatement(sql);
 			pst.setString(1, noticiaDto.getAssunto());
 			pst.setString(2, noticiaDto.getTexto());
 			pst.setDate(3,this.converte(noticiaDto.getData()));
-			pst.setInt(4, noticiaDto.getIdNoticia());
+			//pst.setInt(4, noticiaDto.getIdNoticia());
 			
 			return (pst.executeUpdate() > 0 ? true : false);
 
@@ -107,8 +107,8 @@ public class NoticiaDao {
 			throw new Exception("Não foi possível executar o comando " + sql + ". ERRO: " + e);
 		}
 	}
-	
-	public List<NoticiaDto> Listar()throws Exception
+	//-------------------------------------------------------------
+	public List<NoticiaDto> ListarTudo()throws Exception
 	{
 		List<NoticiaDto> noticias= new ArrayList<NoticiaDto>();
 		NoticiaDto noticiaDto=null;
@@ -136,5 +136,33 @@ public class NoticiaDao {
 			throw new Exception("Não foi possível executar o comando " + sql + ". ERRO: " + e);
 		}
 		return noticias;
+	}
+	//--------------------------------------------------------
+	public NoticiaDto Listar() throws Exception
+	{
+		NoticiaDto noticiaDto=null;
+		try
+		{
+			if(!VerifiqueConexao())
+				return noticiaDto;
+			
+			sql="SELECT * FROM NOTICIA";
+			pst=con.prepareStatement(sql);
+			rs=pst.executeQuery();
+			
+			while(rs.next())
+			{
+				noticiaDto = new NoticiaDto();
+				noticiaDto.setAssunto(rs.getString("ASSUNTO"));
+				noticiaDto.setTexto(rs.getString("TEXTO"));
+				Date data=rs.getDate("DATAPUBLICACAO");
+				noticiaDto.setData(sdf.format(data));
+						
+			}
+		}catch(Exception e)
+		{
+			throw new Exception("Não foi possível executar o comando " + sql + ". ERRO: " + e);
+		}
+		return noticiaDto;
 	}
 }

@@ -19,9 +19,9 @@ public class NoticiaBus {
 		}
 	}
 	
-	public List<NoticiaDto> Listar() throws Exception
+	public NoticiaDto Listar() throws Exception
 	{
-		List<NoticiaDto> noticias = null;
+		NoticiaDto noticias = null;
 		try
 		{
 			 noticias=noticiaDao.Listar();
@@ -31,6 +31,18 @@ public class NoticiaBus {
 			throw new Exception(e.getMessage());
 		}
 		return noticias;
+	}
+	
+	public Boolean Alterar(NoticiaDto noticiaDto) throws Exception
+	{
+		
+		try
+		{
+			return noticiaDao.Alterar(noticiaDto);
+		}catch(Exception e)
+		{
+			throw new Exception(e.getMessage());
+		}
 	}
 
 }

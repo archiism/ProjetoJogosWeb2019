@@ -32,18 +32,16 @@ public class Listar extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession sessao = request.getSession(true);
 		try
 		{
-			List<NoticiaDto> noticias=noticiaBus.Listar();
-			sessao.setAttribute("listarNoticias", noticias);
+			NoticiaDto  noticias=noticiaBus.Listar();
+			sessao.setAttribute("noticias", "dd");
 		}catch(Exception e)
 		{
 			e.getMessage();
 		}
 	}
-
-	
 
 }

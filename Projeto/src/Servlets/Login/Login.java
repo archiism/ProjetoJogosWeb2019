@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Bus.NoticiaBus;
 import Bus.UsuarioBus;
 import Dao.UsuarioDAO;
+import Dto.NoticiaDto;
 import Dto.UsuarioDto;
 
 
@@ -20,6 +22,7 @@ public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UsuarioBus usuarioBus=new UsuarioBus();
 	private UsuarioDto usuarioDto = new UsuarioDto();
+	private NoticiaBus noticiaBus=new NoticiaBus();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -55,6 +58,9 @@ public class Login extends HttpServlet {
 			{
 				sessao.setMaxInactiveInterval(60);
 				sessao.setAttribute("usuarioLogado", user);
+				
+				NoticiaDto  noticias=noticiaBus.Listar();
+				sessao.setAttribute("noti", noticias);
 				
 				
 				RequestDispatcher rd = getServletContext().getRequestDispatcher("/menu.jsp");
