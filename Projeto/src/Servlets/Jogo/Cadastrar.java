@@ -1,11 +1,14 @@
 package Servlets.Jogo;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Bus.JogoBus;
 import Dto.JogoDto;
@@ -35,40 +38,49 @@ public class Cadastrar extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nome = request.getParameter("txtNome");
-		String dificuldade = request.getParameter("txtDificuldade");
-		String genero = request.getParameter("txtGenero");
-		String caminhoHtml = request.getParameter("txtCaminho");
-		
-		switch(dificuldade)
+		HttpSession session=request.getSession(false);
+		if(session==null)
+			response.sendRedirect("/index.jsp");
+		else
 		{
-		case "1":dificuldade="Facil"; break;
-		case "2":dificuldade="Medio"; break;
-		case "3":dificuldade="Dificil"; break;
-		}
-		
-		switch(genero)
-		{
-		case "1":genero="Ação"; break;
-		case "2":genero="Aventura"; break;
-		case "3":genero="Corrida"; break;
-		}
-		
-		jogoDto.setNome(nome);
-		jogoDto.setDificuldade(dificuldade);
-		jogoDto.setGenero(genero);
-		jogoDto.setCaminhoHtml(caminhoHtml);
-		
-		try 
-		{
-			if(jogoBus.Incluir(jogoDto))
+			String nome = request.getParameter("txtNome");
+			String dificuldade = request.getParameter("txtDificuldade");
+			String genero = request.getParameter("txtGenero");
+			String caminhoHtml = request.getParameter("txtCaminho");
+			List<JogoDto> jogos=null;
+			switch(dificuldade)
 			{
-				response.sendRedirect("/Projeto/menu.jsp");
+			case "1":dificuldade="Facil"; break;
+			case "2":dificuldade="Medio"; break;
+			case "3":dificuldade="Dificil"; break;
 			}
-		}catch(Exception e)
-		{
-			e.getMessage();
+			
+			switch(genero)
+			{
+			case "1":genero="Ação"; break;
+			case "2":genero="Aventura"; break;
+			case "3":genero="Corrida"; break;
+			}
+			
+			jogoDto.setNome(nome);
+			jogoDto.setDificuldade(dificuldade);
+			jogoDto.setGenero(genero);
+			jogoDto.setCaminhoHtml(caminhoHtml);
+			
+			try 
+			{
+				if(jogoBus.Incluir(jogoDto))
+				{
+					jogos=jogoBus.ListaJogos();
+					session.setAttribute("jogos", jogos);
+					response.sendRedirect("/Projeto/menu.jsp");
+				}
+			}catch(Exception e)
+			{
+				e.getMessage();
+			}
 		}
+		
 	}
 
 }
