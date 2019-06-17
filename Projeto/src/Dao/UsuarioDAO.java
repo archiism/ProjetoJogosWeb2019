@@ -134,11 +134,13 @@ public class UsuarioDAO {
 				usuarioDto = new UsuarioDto();
 				usuarioDto.setIdUsuario(rs.getInt("IDUSUARIO"));
 				usuarioDto.setNome(rs.getString("NOME"));
-				usuarioDto.setEmail("EMAIL");
+				usuarioDto.setEmail(rs.getString("EMAIL"));
 				usuarioDto.setCpf(rs.getString("CPF"));
 				Date data=rs.getDate("DATANASCIMENTO");
 				usuarioDto.setDataNascimento(sdf.format(data));
 				usuarioDto.setNivelAcesso(rs.getInt("NIVELACESSO"));
+				
+				usuarios.add(usuarioDto);
 			}
 			
 		}catch (SQLException e) {

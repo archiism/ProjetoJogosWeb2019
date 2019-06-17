@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ page import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,15 +92,20 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
+  <c:forEach var="listas" items="${listaUsuario}">
+  <tr>
+      <th scope="row">${listas.idUsuario }</th>
+      <td>${listas.nome}</td>
+      <td>${listas.email}</td>
+      <td>${listas.cpf }</td>
+      <td>${listas.dataNascimento }</td>
+      <td>${listas.nivelAcesso }</td>
     </tr>
+  
+  </c:forEach>
+   
     
+    </tbody>
 <!--------------------------->
     
 

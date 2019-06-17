@@ -35,14 +35,15 @@ public class UsuarioBus {
 	
 	public List<UsuarioDto> Listar() throws Exception
 	{
-		UsuarioDto usuariosDto=null;
+		List<UsuarioDto> usuarios=null;
 		try
 		{
-			return usuarioDAO.Listar();
+			 usuarios = usuarioDAO.Listar();
 		}catch(Exception e)
 		{
 			throw new Exception(e.getMessage());
 		}
+		return usuarios;
 	}
 
 }

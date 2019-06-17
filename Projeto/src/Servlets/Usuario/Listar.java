@@ -1,6 +1,7 @@
 package Servlets.Usuario;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -20,6 +21,7 @@ import Dto.UsuarioDto;
 public class Listar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        UsuarioBus usuarioBus = new UsuarioBus();
+       List<UsuarioDto> usuario = new ArrayList<>();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -36,13 +38,19 @@ public class Listar extends HttpServlet {
 		
 		try
 		{
-			List<UsuarioDto> usuario=usuarioBus.Listar();
+			 usuario=usuarioBus.Listar();
 			sessao.setAttribute("listaUsuario", usuario);
+			for(UsuarioDto u:usuario)
+			{
+				System.out.println(u.getNome());
+				System.out.println(u.getEmail());
+			}
 			
 		}catch(Exception e)
 		{
 			
 		}
+		
 		response.sendRedirect("./usuarios.jsp");
 	}
 
