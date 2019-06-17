@@ -19,6 +19,12 @@ document.forms[0].submit();
   <link rel="stylesheet" type="text/css" href="./Contents/css/style.css">
 </head>
 <body>
+<%
+		response.setHeader("Cache-Control", "no-cache");
+		response.setHeader("Cache-Control", "no-store");
+		response.setDateHeader("Expires", 0);
+		response.setHeader("Pragma", "no-cache");
+	%>
 	<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
