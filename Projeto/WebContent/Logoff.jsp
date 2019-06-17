@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:if test="${sessionScope.logado != 'verdade'}">
+	<c:redirect url="/index.jsp">/</c:redirect>
+</c:if>
 <%
 		response.setHeader("Cache-Control", "no-cache");
 		response.setHeader("Cache-Control", "no-store");

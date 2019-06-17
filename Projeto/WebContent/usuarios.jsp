@@ -20,6 +20,9 @@
 		response.setDateHeader("Expires", 0);
 		response.setHeader("Pragma", "no-cache");
 	%>
+	<c:if test="${sessionScope.logado != 'verdade'}">
+	<c:redirect url="/index.jsp">/</c:redirect>
+</c:if>
 	<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">

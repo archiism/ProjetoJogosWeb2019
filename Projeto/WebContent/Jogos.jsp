@@ -69,7 +69,7 @@ document.forms[0].submit();
         </div>
         <div class="navbar-collapse collapse sidebar-navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/Projeto/Acao">Ação</a></li>
+            <li><a href="#">Ação</a></li>
             <li><a href="#">Aventura</a></li>
             <li><a href="#">Corrida</a></li>
             <li><a href="#">Meus Favoritos</a></li>
@@ -102,17 +102,7 @@ document.forms[0].submit();
     </div>
 <!--------------------------->
    
-    <div class="clear">
-      <h1>LISTA DOS MAIS JOGADOS</h1>
-    </div>
-
-    <div class="card">
-      <img src="./Contents/imagens/joinha.png" alt="John" style="width:100%">
-      <p class="title">JOGO</p>
-      <p>GENERO</p>
-      <p><button class="btn btn-success">Jogar</button>
-        <button class="btn btn-warning">Favorito</button></p>
-    </div>
+    
 <!--------------------------->
     
 

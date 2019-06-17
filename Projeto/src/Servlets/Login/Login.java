@@ -51,17 +51,18 @@ public class Login extends HttpServlet {
 		usuarioDto.setSenha(senha);
 		try 
 		{
-			HttpSession sessao = request.getSession(true);
+			
 			UsuarioDto user=usuarioBus.Login(usuarioDto);
 			
 			if(user!=null)
 			{
+				HttpSession sessao = request.getSession(true);
 				sessao.setMaxInactiveInterval(60);
 				sessao.setAttribute("usuarioLogado", user);
 				
 				NoticiaDto  noticias=noticiaBus.Listar();
 				sessao.setAttribute("noti", noticias);
-				
+				sessao.setAttribute("logado", "verdade");
 				
 				RequestDispatcher rd = getServletContext().getRequestDispatcher("/menu.jsp");
 				rd.forward(request, response);
