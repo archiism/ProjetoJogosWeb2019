@@ -17,10 +17,10 @@
 	<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Indie Retr0 GameFlix</a>
+      <a class="navbar-brand" href="./menu.jsp">Indie Retr0 GameFlix</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-       <button class="btn btn-primary navbar-btn glyphicon glyphicon-home"> Inicio</button>
+       <button class="btn btn-primary navbar-btn glyphicon glyphicon-home" onclick="window.location.href='./menu.jsp'"> Inicio</button>
        
      
        <c:if test="${sessionScope.usuarioLogado.getNivelAcesso()!=0 }">
@@ -127,6 +127,7 @@
     <label for="nome">Nome do Jogo:</label>
     <input type="text" class="form-control" id="nome">
   </div>
+  
   <div class="form-group">
     <label for="pwd">Dificuldade:</label>
     <select class="form-control" id="pwd">
@@ -135,6 +136,16 @@
       <option value="3">Dificil</option>
     </select>
   </div>
+  
+  <div class="form-group">
+    <label for="genero">Gênero:</label>
+    <select class="form-control" id="genero">
+      <option value="1">Ação</option>
+      <option value="2">Aventura</option>
+      <option value="3">Corrida</option>
+    </select>
+  </div>
+  
   <div class="form-group">
     <label for="caminho">Selecionar Jogo:</label>
     <input type="file" class="form-control" id="caminho">

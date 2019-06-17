@@ -40,11 +40,7 @@ public class Listar extends HttpServlet {
 		{
 			 usuario=usuarioBus.Listar();
 			sessao.setAttribute("listaUsuario", usuario);
-			for(UsuarioDto u:usuario)
-			{
-				System.out.println(u.getNome());
-				System.out.println(u.getEmail());
-			}
+			
 			
 		}catch(Exception e)
 		{

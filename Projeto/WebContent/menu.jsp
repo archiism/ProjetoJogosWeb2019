@@ -132,6 +132,16 @@ document.forms[0].submit();
       <option value="3">Dificil</option>
     </select>
   </div>
+  
+  <div class="form-group">
+    <label for="genero">Gênero:</label>
+    <select class="form-control" id="genero">
+      <option value="1">Ação</option>
+      <option value="2">Aventura</option>
+      <option value="3">Corrida</option>
+    </select>
+  </div>
+  
   <div class="form-group">
     <label for="caminho">Selecionar Jogo:</label>
     <input type="file" class="form-control" id="caminho">
