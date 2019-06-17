@@ -67,6 +67,10 @@ public class Login extends HttpServlet {
 				rd.forward(request, response);
 				//response.sendRedirect("menu.jsp");
 			}
+			else
+			{
+				response.sendRedirect("/Projeto/index.jsp");
+			}
 			
 			
 		} catch (Exception e) {

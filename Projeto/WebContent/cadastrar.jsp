@@ -80,8 +80,9 @@
     </div>
     
   </div>
-  <div class="form-row">
-    <div class="col-sm-2 mb-3">
+  <hr/>
+  <div class="row">
+    <div class="col-md-12">
       <br><button class="btn btn-primary" type="submit">Confirmar</button><br>
     </div>
   </div>

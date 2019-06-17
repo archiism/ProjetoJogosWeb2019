@@ -37,7 +37,7 @@ document.forms[0].submit();
     
       
       
-    <button class="btn btn-danger navbar-btn glyphicon glyphicon-user"> Sair</button>
+    <button class="btn btn-danger navbar-btn glyphicon glyphicon-user" onclick="window.location.href='./Logoff.jsp'"> Sair</button>
     
     </ul>
   </div>
@@ -73,7 +73,7 @@ document.forms[0].submit();
 
     <div class="form-group">
   <label for="comment">Noticias</label>
-  <textarea class="form-control" rows="10" id="comment">${noti.assunto} ( ${noti.data } )
+  <textarea class="form-control" rows="10" id="comment" disabled>${noti.assunto} ( ${noti.data } )
   
   
   ${ noti.texto}</textarea>
