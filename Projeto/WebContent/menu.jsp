@@ -116,7 +116,7 @@ document.forms[0].submit();
 <!--------------------------->
     
 
-<form method="Post" action="/Projeto/Login">
+<form method="Post" action="/Projeto/CadastrarJogo">
 <!-- The Modal -->
 <div class="modal fade" id="myModal">
   <div class="modal-dialog modal-md">
@@ -132,11 +132,11 @@ document.forms[0].submit();
 
 <div class="form-group">
     <label for="nome">Nome do Jogo:</label>
-    <input type="text" class="form-control" id="nome">
+    <input type="text" class="form-control" id="nome" name="txtNome">
   </div>
   <div class="form-group">
     <label for="pwd">Dificuldade:</label>
-    <select class="form-control" id="pwd">
+    <select class="form-control" id="pwd" name="txtDificuldade">
       <option value="1">Facil</option>
       <option value="2">Médio</option>
       <option value="3">Dificil</option>
@@ -145,7 +145,7 @@ document.forms[0].submit();
   
   <div class="form-group">
     <label for="genero">Gênero:</label>
-    <select class="form-control" id="genero">
+    <select class="form-control" id="genero" name="txtGenero">
       <option value="1">Ação</option>
       <option value="2">Aventura</option>
       <option value="3">Corrida</option>
@@ -154,7 +154,7 @@ document.forms[0].submit();
   
   <div class="form-group">
     <label for="caminho">Selecionar Jogo:</label>
-    <input type="file" class="form-control" id="caminho">
+    <input type="file" class="form-control" id="caminho" name="txtCaminho">
   </div>
 
       <!--Fim Modal body -->

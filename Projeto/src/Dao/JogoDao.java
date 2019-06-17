@@ -91,5 +91,41 @@ public class JogoDao {
 		}
 		return jogos;
 	}
+	
+	public List<JogoDto> ListarCategoria(String categoria) throws Exception
+	{
+		List<JogoDto> jogos = new ArrayList<JogoDto>();
+		JogoDto jogoDto;
+		try
+		{
+			if(!VerifiqueConexao())
+				return jogos;
+			
+			sql="SELECT * FROM JOGO where categoria=?";
+			pst=con.prepareStatement(sql);
+			pst.setString(1, categoria);
+			rs=pst.executeQuery();
+			
+			while(rs.next())
+			{
+				jogoDto=new JogoDto();
+				jogoDto.setCaminhoHtml(rs.getString("CAMINHOHTML"));
+				jogoDto.setCategoria(rs.getString("CATEGORIA"));
+				jogoDto.setClassificacao(rs.getString("CLASSIFICACAO"));
+				jogoDto.setDescricao(rs.getString("DESCRICAO"));
+				jogoDto.setDificuldade(rs.getString("DIFICULDADE"));
+				jogoDto.setIdJogo(rs.getInt("IDJOGO"));
+				jogoDto.setNome(rs.getString("NOME"));
+				jogoDto.setQuantidadeJogada(rs.getInt("QUANTIDADEJOGADA"));
+				jogoDto.setManual(rs.getString("MANUAL"));
+				
+				jogos.add(jogoDto);
+			}
+		}catch(Exception e)
+		{
+			throw new Exception(e.getMessage());
+		}
+		return jogos;
+	}
 
 }
