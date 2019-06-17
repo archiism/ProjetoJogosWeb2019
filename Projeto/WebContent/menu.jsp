@@ -93,6 +93,7 @@ document.forms[0].submit();
       <H1 style="text-align: center;">LISTA DE JOGOS</H1>
     </div>
 <!--------------------------->
+
     <div class="card">
       <img src="./Contents/imagens/joinha.png" alt="John" style="width:100%">
       <p class="title">JOGO</p>
