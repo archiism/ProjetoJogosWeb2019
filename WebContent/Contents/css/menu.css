@@ -1,0 +1,500 @@
+*{
+ font-family: Arial, Helvetica, sans-serif;
+}
+.post{
+    float: left;
+}
+.postDiv{
+    margin-left: 20%;
+	margin-top: 1%;
+	
+    background-color:#d3d3d3;
+    height: 259px;
+    width: 1300px;
+    border:solid;
+    border-color: steelblue;
+    border-width: 15px;
+	/* padding: 2px; */
+	border-radius: 5px;
+	
+}
+#postuser{
+    
+    width: 150px;
+    height: 100px;
+    background-color:steelblue;
+    align-content: flex-end;
+    padding: 5px;
+    border-width: 10px;
+    
+    border: solid;
+    border-color: steelblue;
+    margin:10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:white;
+    border-radius: 8px;
+
+}
+#imgteste{
+    width: 150px;
+    height: 100px;
+}
+.postCard{
+    margin: 5px;
+    border:solid;
+    width: 1285px;
+    height: 245px;
+    border-color: steelblue;
+	white-space:nowrap;
+	
+	background-color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+.menu{
+    font-size: 30px;
+    background-color: steelblue;
+    text-align: end;
+    color: white;
+    padding: 5px;   
+	border-color: steelblue;
+	/* position: fixed; */
+	/* width: 100%; */
+}
+/* .myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #9fb4f2;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #9fb4f2;
+	box-shadow:inset 0px 1px 0px 0px #9fb4f2;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2), color-stop(1, #476e9e));
+	background:-moz-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-webkit-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-o-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-ms-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7892c2', endColorstr='#476e9e',GradientType=0);
+	background-color:#7892c2;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
+	background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
+	background-color:#476e9e;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+} */
+.myButton {
+	background-color:#78cafa;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:4px solid steelblue;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:12px 23px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:#0088ff;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.myButton2 {
+	background-color:#78cafa;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:4px solid steelblue;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:12px 23px;
+	text-decoration:none;
+	width: 300px;
+	margin-top: 6px;
+}
+.myButton2:hover {
+	background-color:#0088ff;
+}
+.myButton2:active {
+	position:relative;
+	top:1px;
+}
+#cardTitulo{
+    font-size: 20px;
+    font-weight: bold;
+	text-align: center;
+	
+}
+/* #textoCard {
+	max-width: 138ch;
+	overflow: hidden;
+	text-overflow: unset;
+	white-space: nowrap;
+  } */
+#User{
+    font-weight: bold;
+    
+}
+#textoCard{
+	
+}
+#navigator{
+	
+	width: 300px;
+	height: 600px;
+	
+	float: left;
+	
+	border: solid;
+	border-width: 3px;
+	border-radius: 5px;
+	
+	/* border-color: darkblue; */
+	color: white;
+	text-decoration: none;
+	position: fixed;
+	background-color: steelblue;
+	border-color: steelblue;
+}
+#navigator:hover{
+	border-color: #0088ff;
+}
+#titulo{
+	font-weight: bold;
+	font-size: 50px;
+	color: white;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	text-align: center;
+}
+.root{
+	
+	
+}
+.imagem{
+	background-image: url("../imagens/packman.jpg");
+	width: 1900;
+	height: 1200px;
+
+}
+#pNav{
+	font-size: 30px;
+	
+}
+#seletores{
+	-ms-transform: scale(2); /* IE */
+  	-moz-transform: scale(2); /* FF */
+  	-webkit-transform: scale(1.8); /* Safari and Chrome */
+  	-o-transform: scale(2); /* Opera */
+	transform: scale(1.5);
+	padding: 5px;
+	margin-left: 10px;
+	font-family: arial;
+    color:green;
+    
+   
+}
+#seletorestext{
+	font-size: 30px;
+	display: inline;
+}
+
+#linha{
+	margin-top: 6px;
+	border: solid;
+	border-color: dodgerblue;
+	border-bottom: 1px;
+	
+}
+
+#Filtros{
+	width: 300px;
+	height: 300px;
+	float: left;
+	border-bottom: solid;
+	border-width: 1px;
+	border-color: dodgerblue;
+	
+}
+#pesquisar{
+	margin-top: 5px;
+	width:285px;
+	height:45px;
+	padding:0px 5px;
+	border-width:2px;
+	border-radius:5px;
+	border-style:solid;
+	border-color:#000000;
+	font-weight:bold;
+	text-align:center;
+	font-size:23px;
+	outline:none;
+}
+.botao2{
+	width: 285;
+}
+#divsoriaS{
+	border-bottom: solid;
+	border-bottom-width: 5px;
+	border-color: #d3d3d3;
+	margin-top: 30px;
+	border-radius: 5px;
+	width: 1340px;
+	margin-left: 20%;
+}
+.jogos{
+	background-color: steelblue;
+	/* width: 75%;
+	height: 100%; */
+	margin-left: 20%;
+	height: 750px;
+	margin-top: 1%;
+	width: 68%;
+	border-radius: 10px;
+	padding: 20px;
+	float: left;
+	/* opacity: 0.8; */
+	
+}
+.cardGames{
+	width: 200px;
+	height: 250px;
+	background-color: white;
+	padding: 2px;	
+	border:solid;
+	border-color: darkblue;
+	align-content: center;
+	
+}
+.card{
+	
+	width: 181px;
+	height: 170px;
+	padding: 7px;
+	border: solid;
+	border-width: 2px;
+	border-color: steelblue;
+	border-radius: 5px;
+	
+	
+}
+.myButton3 {
+	background-color:#78cafa;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:4px solid steelblue;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:12px 23px;
+	text-decoration:none;
+	width: 200px;
+	height: 50px;
+	margin-top: 6px;
+}
+.myButton3:hover {
+	background-color:#0088ff;
+}
+.myButton3:active {
+	position:relative;
+	top:1px;
+}
+.modal{
+	position: fixed;
+	color: white;
+	background-color: white;
+	width: 800px;
+	height: 700px;
+	margin-left: 47%;
+	margin-top:3%;
+	border: solid;
+	border-color: black;
+	border-radius: 5px;	
+	z-index: -4;
+	opacity: 0;
+	background-color: #78cafa;
+	border-width: 10px;
+	border-color: darkblue;
+}
+.modal:hover{
+	border-color:aliceblue;
+}
+.modal:target{
+	opacity: 1;
+	z-index: 0;
+	pointer-events: auto;
+}
+#fechar{
+	
+}
+#fechar:target{
+	z-index: -4;
+	opacity: 0;
+	
+}
+#modalAlign{
+	
+}
+#abrir2:target{
+	background-color: red;
+}
+
+.linhasinput{
+	margin-top: 5px;
+	margin-left: 20px;
+	width:750px;
+	height:30px;
+	padding:0px 5px;
+	border-width:2px;
+	border-radius:5px;
+	border-style:solid;
+	border-color:#000000;
+	font-weight:bold;
+	text-align:left;
+	font-size:23px;
+	outline:none;
+}
+#modalTitulo{
+	text-align: center;
+	color:white;
+	font-size: 30px;
+	font-weight: bold;
+}
+#attP{
+	text-align: center;
+	color:white;
+	font-size: 20px;
+	font-weight: bold;
+}
+.myButton4 {
+	margin-left: 38%;
+	background-color:#78cafa;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:4px solid steelblue;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:12px 23px;
+	text-decoration:none;
+	width: 200px;
+	height: 100px;
+	margin-top: 6px;
+	font-size: 30px;
+}
+.myButton4:hover {
+	background-color:#0088ff;
+}
+.myButton4:active {
+	position:relative;
+	top:1px;
+}
+.tabelaUsuario{
+
+}
+table{
+	width: 100%;
+	margin-bottom : .5em;
+    table-layout: fixed;
+
+}
+
+td, th {
+	padding: .7em;
+	margin: 0;
+	border: 2px solid #0088ff;
+	text-align: center;
+	border-radius: 6px;
+}
+
+th{
+	font-weight: bold;
+	background-color: whitesmoke;
+}
+
+label{
+	color: #555;
+	display: block;
+	margin-bottom: .2em;
+}
+
+.campo{
+	margin: 0;
+	padding-bottom: 1em;
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: .7em;
+	width: 100%;
+}
+
+.campo-medio{
+	display: inline-block;
+	padding-right: .5em;
+}
+
+.grupo{
+	width: 32%;
+	display: inline-block;
+	padding: 10px 0px;
+}
+
+
+
+
+
+
+
+.adicionar-paciente{
+    margin-top: 30px;
+}
+
+.campo-invalido{
+	border: 1px solid red;
+}
+.jogoinput{
+	margin-top: 5px;
+	margin-left: 20px;
+	width:400px;
+	height:30px;
+	padding:0px 5px;
+	border-width:2px;
+	border-radius:5px;
+	border-style:solid;
+	border-color:#000000;
+	font-weight:bold;
+	text-align:left;
+	font-size:23px;
+	outline:none;
+}
+.postCard p{
+	margin-left: 20px;
+	
+}
