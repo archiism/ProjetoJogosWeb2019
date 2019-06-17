@@ -70,8 +70,8 @@ document.forms[0].submit();
         <div class="navbar-collapse collapse sidebar-navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="/Projeto/Acao">Ação</a></li>
-            <li><a href="#">Aventura</a></li>
-            <li><a href="#">Corrida</a></li>
+            <li><a href="/Projeto/Aventura">Aventura</a></li>
+            <li><a href="/Projeto/Corrida">Corrida</a></li>
             <li><a href="#">Meus Favoritos</a></li>
             <!--<li><a href="#">Reviews <span class="badge">1,118</span></a></li> -->
           </ul>
