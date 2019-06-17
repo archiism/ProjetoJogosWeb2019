@@ -4,12 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type/javascript>
-function usuarios(){
-document.forms[0].action="ListarUsuarios";
-document.forms[0].submit();
-}
-</script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +23,7 @@ document.forms[0].submit();
        
      
        <c:if test="${sessionScope.usuarioLogado.getNivelAcesso()!=0 }">
-        <button class="btn btn-primary navbar-btn " onclick="usuarios()">Lista de usuarios</button>
+        <button class="btn btn-primary navbar-btn ">Lista de usuarios</button>
         <button class="btn btn-primary navbar-btn " data-toggle="modal" data-target="#noticia">Inserir Noticia </button>
       <button class="btn btn-primary navbar-btn " data-toggle="modal" data-target="#myModal">Cadastrar Jogo </button>
        </c:if>
@@ -80,29 +74,32 @@ document.forms[0].submit();
 </div>
 
     <div class="text-center">
-      <H1 style="text-align: center;">LISTA DE JOGOS</H1>
+      <H1 style="text-align: center;">LISTA DE USUARIOS</H1>
     </div>
 
-    <div class="card">
-      <img src="./Contents/imagens/joinha.png" alt="John" style="width:100%">
-      <p class="title">JOGO</p>
-      <p>GENERO</p>
-      <p><button class="btn btn-success">Jogar</button>
-      <button class="btn btn-warning">Favorito</button></p>
-    </div>
+    
 <!--------------------------->
-   
-    <div class="clear">
-      <h1>LISTA DOS MAIS JOGADOS</h1>
-    </div>
-
-    <div class="card">
-      <img src="./Contents/imagens/joinha.png" alt="John" style="width:100%">
-      <p class="title">JOGO</p>
-      <p>GENERO</p>
-      <p><button class="btn btn-success">Jogar</button>
-        <button class="btn btn-warning">Favorito</button></p>
-    </div>
+   <table class="table">
+  <thead class="table table-striped table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Nascimento</th>
+      <th scope="col">Nivel de Acesso</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+    </tr>
+    
 <!--------------------------->
     
 

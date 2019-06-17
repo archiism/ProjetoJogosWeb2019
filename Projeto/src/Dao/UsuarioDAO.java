@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 import Dto.UsuarioDto;
 import connection.ConnectionFactory;
@@ -112,5 +114,36 @@ public class UsuarioDAO {
 			throw new Exception("Não foi possível executar o comando "+e);
 		}
 		
+	}
+	public List<UsuarioDto> Listar() throws Exception
+	{
+		List<UsuarioDto> usuarios = new ArrayList<UsuarioDto>();
+		UsuarioDto usuarioDto;
+		
+		try
+		{
+			if(!VerifiqueConexao())
+				return usuarios;
+			
+			sql="SELECT * FROM USUARIO";
+			pst=con.prepareStatement(sql);
+			rs=pst.executeQuery();
+			
+			while(rs.next())
+			{
+				usuarioDto = new UsuarioDto();
+				usuarioDto.setIdUsuario(rs.getInt("IDUSUARIO"));
+				usuarioDto.setNome(rs.getString("NOME"));
+				usuarioDto.setEmail("EMAIL");
+				usuarioDto.setCpf(rs.getString("CPF"));
+				Date data=rs.getDate("DATANASCIMENTO");
+				usuarioDto.setDataNascimento(sdf.format(data));
+				usuarioDto.setNivelAcesso(rs.getInt("NIVELACESSO"));
+			}
+			
+		}catch (SQLException e) {
+			throw new Exception("Não foi possível executar o comando "+e);
+		}
+		return usuarios;
 	}
 }

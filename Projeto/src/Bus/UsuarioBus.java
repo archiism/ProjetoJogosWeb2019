@@ -1,5 +1,7 @@
 package Bus;
 
+import java.util.List;
+
 import Dao.UsuarioDAO;
 import Dto.UsuarioDto;
 
@@ -25,6 +27,18 @@ public class UsuarioBus {
 		try
 		{
 			return usuarioDAO.incluir(usuarioDto);
+		}catch(Exception e)
+		{
+			throw new Exception(e.getMessage());
+		}
+	}
+	
+	public List<UsuarioDto> Listar() throws Exception
+	{
+		UsuarioDto usuariosDto=null;
+		try
+		{
+			return usuarioDAO.Listar();
 		}catch(Exception e)
 		{
 			throw new Exception(e.getMessage());
