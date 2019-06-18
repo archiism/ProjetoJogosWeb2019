@@ -104,14 +104,14 @@ public class UsuarioDAO {
 			pst.setString(3, usuarioDTO.getLogin());
 			pst.setString(4, usuarioDTO.getEmail());
 			pst.setString(5, usuarioDTO.getCpf());
-			d=converte(usuarioDTO.getDataNascimento());
-			//pst.setString(6, usuarioDTO.getDataNascimento());
+			//d=converte(usuarioDTO.getDataNascimento());
+			pst.setString(6, usuarioDTO.getDataNascimento());
 			pst.setInt(7, usuarioDTO.getNivelAcesso());
 			
 			return(pst.executeUpdate() > 0?true:false);
 			
 		} catch (SQLException e) {
-			throw new Exception("Não foi possível executar o comando "+e);
+			throw new Exception("NÃ£o foi possÃ­vel executar o comando "+e);
 		}
 		
 	}
@@ -144,7 +144,7 @@ public class UsuarioDAO {
 			}
 			
 		}catch (SQLException e) {
-			throw new Exception("Não foi possível executar o comando "+e);
+			throw new Exception("NÃ£o foi possÃ­vel executar o comando "+e);
 		}
 		return usuarios;
 	}
