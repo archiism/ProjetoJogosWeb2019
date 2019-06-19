@@ -115,6 +115,63 @@ public class UsuarioDAO {
 		}
 		
 	}
+	
+	public Boolean selecionarUsuario(long indice,UsuarioDto usuarioDTO) throws Exception {
+
+		try {
+			if (!VerifiqueConexao())
+				return false;
+
+			sql = "SELECT * FROM USUARIO WHERE codigo = ?";
+			pst = con.prepareStatement(sql);
+			pst.setInt(1, (int) indice);
+			rs=pst.executeQuery();
+			
+			while (rs.next()) {
+				usuarioDTO = new UsuarioDto();
+				usuarioDTO.setIdUsuario(rs.getInt("IDUSUARIO"));
+				usuarioDTO.setNome(rs.getString("NOME"));
+				usuarioDTO.setEmail(rs.getString("EMAIL"));
+				usuarioDTO.setCpf(rs.getString("CPF"));
+				Date data = rs.getDate("DATANASCIMENTO");
+				usuarioDTO.setDataNascimento(sdf.format(data));
+				usuarioDTO.setNivelAcesso(rs.getInt("NIVELACESSO"));
+
+			}
+			return (pst.executeUpdate() > 0 ? true : false);
+
+		} catch (SQLException e) {
+			throw new Exception("Não foi possível executar o comando " + e);
+		}
+
+	}
+	
+	public Boolean atualizar(UsuarioDto usuarioDTO) throws Exception{
+		
+		try {
+			if(!VerifiqueConexao())
+			return false;
+		
+		sql="UPDATE USUARIO SET nome = ?,senha = ?,login = ?,email = ?,cpf = ?,dataNascimento = ?,nivelAcesso = ? WHERE codigo = ?";
+		pst=con.prepareStatement(sql);
+		pst.setString(1, usuarioDTO.getNome());
+		pst.setString(2, usuarioDTO.getSenha());
+		pst.setString(3, usuarioDTO.getLogin());
+		pst.setString(4, usuarioDTO.getEmail());
+		pst.setString(5, usuarioDTO.getCpf());
+		//d=converte(usuarioDTO.getDataNascimento());
+		pst.setString(6, usuarioDTO.getDataNascimento());
+		pst.setInt(7, usuarioDTO.getNivelAcesso());
+		pst.setInt(8, usuarioDTO.getIdUsuario());
+		
+		return(pst.executeUpdate() > 0?true:false);
+		
+		} catch (SQLException e) {
+			throw new Exception("Não foi possível executar o comando "+e);
+		}
+		
+	}
+	
 	public List<UsuarioDto> Listar() throws Exception
 	{
 		List<UsuarioDto> usuarios = new ArrayList<UsuarioDto>();

@@ -2,11 +2,12 @@
     pageEncoding="utf-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%@ page import="java.util.*"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Lista de usuários</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -98,6 +99,7 @@
       <th scope="col">CPF</th>
       <th scope="col">Nascimento</th>
       <th scope="col">Nivel de Acesso</th>
+      <th scope="col">Editar usuário</th>
     </tr>
   </thead>
   <tbody>
@@ -109,7 +111,10 @@
       <td>${listas.cpf }</td>
       <td>${listas.dataNascimento }</td>
       <td>${listas.nivelAcesso }</td>
-    </tr>
+      <td><form action="Projeto/EditarUsuario" method="POST" id="id">
+ 			<button type="submit" value="${lista.id}" > Editar usuário</button>     
+      </form></td>
+   </tr>
   
   </c:forEach>
    
