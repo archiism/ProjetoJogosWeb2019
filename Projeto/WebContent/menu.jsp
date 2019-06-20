@@ -74,7 +74,7 @@ document.forms[0].submit();
             <li><a href="/Projeto/Acao">Ação</a></li>
             <li><a href="/Projeto/Aventura">Aventura</a></li>
             <li><a href="/Projeto/Corrida">Corrida</a></li>
-            <li><a href="#">Meus Favoritos</a></li>
+            
             <!--<li><a href="#">Reviews <span class="badge">1,118</span></a></li> -->
           </ul>
         </div><!--/.nav-collapse -->
@@ -103,7 +103,7 @@ document.forms[0].submit();
       <p class="title">${listas.nome}</p>
       <p>${listas.genero}</p>
      <!--   <p><button class="btn btn-success">Jogar</button><p> -->
-       <a href="${listas.caminhoHtml }" class="btn btn-primary" role="button">Jogar</a>
+       <a href="/Projeto/Jogar?jogoJs=${listas.caminhoHtml}" class="btn btn-primary" role="button">Jogar</a>
     </div>
     </c:forEach>
 <!--------------------------->

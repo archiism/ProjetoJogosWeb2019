@@ -67,7 +67,7 @@
             <li><a href="#">Ação</a></li>
             <li><a href="#">Aventura</a></li>
             <li><a href="#">Corrida</a></li>
-            <li><a href="#">Meus Favoritos</a></li>
+        
             <!--<li><a href="#">Reviews <span class="badge">1,118</span></a></li> -->
           </ul>
         </div><!--/.nav-collapse -->
