@@ -41,7 +41,7 @@ public class JogoDao {
 			
 			//int codGenero=generoDao.incluir(jogoDto);
 			
-			sql="INSERT INTO JOGO (NOME, DIFICULDADE, CAMINHO, IDGENERO) VALUES(?,?,?,?,?)";
+			sql="INSERT INTO JOGO (NOME, DIFICULDADE, CAMINHO, GENERO,IMAGEM) VALUES(?,?,?,?,?)";
 			pst=con.prepareStatement(sql);
 			pst.setString(1, jogoDto.getNome());
 			pst.setString(2, jogoDto.getDificuldade());

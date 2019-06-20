@@ -46,7 +46,8 @@ public class Cadastrar extends HttpServlet {
 			String nome = request.getParameter("txtNome");
 			String dificuldade = request.getParameter("txtDificuldade");
 			String genero = request.getParameter("txtGenero");
-			String caminhoHtml = request.getParameter("txtCaminho");
+			String caminhoHtml = "/Projeto/Contents/jogos/"+request.getParameter("txtCaminho");
+			String imagem="/Projeto/Contents/imagens/"+request.getParameter("txtCaminhoImagem");
 			List<JogoDto> jogos=null;
 			switch(dificuldade)
 			{
@@ -66,6 +67,7 @@ public class Cadastrar extends HttpServlet {
 			jogoDto.setDificuldade(dificuldade);
 			jogoDto.setGenero(genero);
 			jogoDto.setCaminhoHtml(caminhoHtml);
+			jogoDto.setImagem(imagem);
 			
 			try 
 			{
