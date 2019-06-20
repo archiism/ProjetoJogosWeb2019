@@ -103,6 +103,7 @@
       <th scope="col">Editar usuário</th>
     </tr>
   </thead>
+  
   <tbody>
   <c:forEach var="listas" items="${listaUsuario}">
   <tr>
@@ -119,8 +120,7 @@
    </tr>
   
   </c:forEach>
-   
-    
+      
     </tbody>
 <!--------------------------->
     
