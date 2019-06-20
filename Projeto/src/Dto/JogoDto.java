@@ -8,18 +8,22 @@ public class JogoDto implements Serializable {
 	
 	private int idJogo;
 	private String nome;
-	private String categoria;
-	private String descricao;
-	private String classificacao;
 	private String dificuldade;
 	private String caminhoHtml;
-	private int quantidadeJogada;
 	private String Genero;
-	private String Manual;
+	private String imagem;
 	
 	public JogoDto()
 	{
 		
+	}
+
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
 	}
 
 	public int getIdJogo() {
@@ -38,29 +42,6 @@ public class JogoDto implements Serializable {
 		this.nome = nome;
 	}
 
-	public String getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public String getClassificacao() {
-		return classificacao;
-	}
-
-	public void setClassificacao(String classificacao) {
-		this.classificacao = classificacao;
-	}
 
 	public String getDificuldade() {
 		return dificuldade;
@@ -78,13 +59,6 @@ public class JogoDto implements Serializable {
 		this.caminhoHtml = caminhoHtml;
 	}
 
-	public int getQuantidadeJogada() {
-		return quantidadeJogada;
-	}
-
-	public void setQuantidadeJogada(int quantidadeJogada) {
-		this.quantidadeJogada = quantidadeJogada;
-	}
 
 	public String getGenero() {
 		return Genero;
@@ -94,13 +68,6 @@ public class JogoDto implements Serializable {
 		this.Genero = Genero;
 	}
 
-	public String getManual() {
-		return Manual;
-	}
-
-	public void setManual(String Manual) {
-		this.Manual = Manual;
-	}
 	
 	
 }

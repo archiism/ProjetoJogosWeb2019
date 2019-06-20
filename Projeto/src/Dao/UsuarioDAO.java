@@ -191,6 +191,7 @@ public class UsuarioDAO {
 				usuarioDto = new UsuarioDto();
 				usuarioDto.setIdUsuario(rs.getInt("IDUSUARIO"));
 				usuarioDto.setNome(rs.getString("NOME"));
+				usuarioDto.setLogin(rs.getString("LOGIN"));
 				usuarioDto.setEmail(rs.getString("EMAIL"));
 				usuarioDto.setCpf(rs.getString("CPF"));
 				Date data=rs.getDate("DATANASCIMENTO");

@@ -41,14 +41,13 @@ public class JogoDao {
 			
 			//int codGenero=generoDao.incluir(jogoDto);
 			
-			sql="INSERT INTO JOGO (NOME, DIFICULDADE, CAMINHO, QUANTIDADEJOGADA, IDGENERO, MANUAL) VALUES(?,?,?,?,?)";
+			sql="INSERT INTO JOGO (NOME, DIFICULDADE, CAMINHO, IDGENERO) VALUES(?,?,?,?,?)";
 			pst=con.prepareStatement(sql);
 			pst.setString(1, jogoDto.getNome());
 			pst.setString(2, jogoDto.getDificuldade());
 			pst.setString(3, jogoDto.getCaminhoHtml());
-			pst.setInt(4, jogoDto.getQuantidadeJogada());
-			pst.setString(5, jogoDto.getGenero());
-			pst.setString(6, jogoDto.getManual());
+			pst.setString(4, jogoDto.getGenero());
+			pst.setString(5, jogoDto.getImagem());
 			return pst.executeUpdate() > 0 ? true:false;
 			
 		}catch(Exception e)
@@ -78,6 +77,7 @@ public class JogoDao {
 				jogoDto.setIdJogo(rs.getInt("IDJOGO"));
 				jogoDto.setNome(rs.getString("NOME"));
 				jogoDto.setGenero(rs.getString("GENERO"));
+				jogoDto.setImagem(rs.getString("IMAGEM"));
 				
 				jogos.add(jogoDto);
 			}

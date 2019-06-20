@@ -78,7 +78,7 @@
 
     <div class="form-group">
   <label for="comment">Noticias</label>
-  <textarea class="form-control" rows="10" id="comment" disabled>${noti.assunto} ( ${noti.data } )
+  <textarea class="form-control" rows="10" id="comment" readonly>${noti.assunto} ( ${noti.data } )
   
   
   ${ noti.texto}</textarea>
@@ -95,6 +95,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nome</th>
+      <th scope="col">Login</th>
       <th scope="col">Email</th>
       <th scope="col">CPF</th>
       <th scope="col">Nascimento</th>
@@ -105,8 +106,9 @@
   <tbody>
   <c:forEach var="listas" items="${listaUsuario}">
   <tr>
-      <th scope="row">${listas.idUsuario }</th>
+      <th scope="row"><input type="text" name="id" size="2" readonly value="${listas.idUsuario }"></th>
       <td>${listas.nome}</td>
+      <td>${listas.login }</td>
       <td>${listas.email}</td>
       <td>${listas.cpf }</td>
       <td>${listas.dataNascimento }</td>

@@ -94,9 +94,8 @@ public class FavoritoDao {
 			while(rs.next())
 			{
 				jogoDto = new JogoDto();
-				jogoDto.setCaminhoHtml(rs.getString("CAMINHOHTML"));
+				jogoDto.setCaminhoHtml(rs.getString("CAMINHO"));
 				jogoDto.setIdJogo(rs.getInt("IDJOGO"));
-				jogoDto.setManual(rs.getString("MANUAL"));
 				jogoDto.setNome(rs.getString("NOME"));
 				jogoDto.setDificuldade(rs.getString("DIFICULDADE"));
 				favoritos.add(jogoDto);

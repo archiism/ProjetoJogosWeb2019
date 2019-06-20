@@ -83,7 +83,7 @@ document.forms[0].submit();
 
     <div class="form-group">
   <label for="comment">Noticias</label>
-  <textarea class="form-control" rows="10" id="comment" disabled>${noti.assunto} ( ${noti.data } )
+  <textarea class="form-control" rows="10" id="comment" readonly>${noti.assunto} ( ${noti.data } )
   
   
   ${ noti.texto}</textarea>
@@ -98,7 +98,6 @@ document.forms[0].submit();
       <p class="title">JOGO</p>
       <p>GENERO</p>
       <p><button class="btn btn-success">Jogar</button>
-      <button class="btn btn-warning">Favorito</button></p>
     </div>
 <!--------------------------->
    

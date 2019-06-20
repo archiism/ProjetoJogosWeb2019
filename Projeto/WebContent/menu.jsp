@@ -83,7 +83,7 @@ document.forms[0].submit();
 
     <div class="form-group">
   <label for="comment">Noticias</label>
-  <textarea class="form-control" rows="10" id="comment" disabled>${noti.assunto} ( ${noti.data } )
+  <textarea class="form-control" rows="10" id="comment" readonly>${noti.assunto} ( ${noti.data } )
   
   
   ${ noti.texto}</textarea>
@@ -94,27 +94,19 @@ document.forms[0].submit();
     </div>
 <!--------------------------->
 
+			<!--  lISTA DOS JOGOS -->
+			
     <div class="card">
       <img src="./Contents/imagens/joinha.png" alt="John" style="width:100%">
       <p class="title">JOGO</p>
       <p>GENERO</p>
-      <p><button class="btn btn-success">Jogar</button>
-      <button class="btn btn-warning">Favorito</button></p>
+     <!--   <p><button class="btn btn-success">Jogar</button><p> -->
+       <a href="#" class="btn btn-primary" role="button">Jogar</a>
     </div>
 <!--------------------------->
    
-    <div class="clear">
-      <h1>LISTA DOS MAIS JOGADOS</h1>
-    </div>
-<!--------------------------->
-    <div class="card">
-      <img src="./Contents/imagens/joinha.png" alt="John" style="width:100%">
-      <p class="title">JOGO</p>
-      <p>GENERO</p>
-      <p><button class="btn btn-success">Jogar</button>
-        <button class="btn btn-warning">Favorito</button></p>
-    </div>
-<!--------------------------->
+   
+
     
 
 <form method="Post" action="/Projeto/CadastrarJogo">
@@ -156,6 +148,11 @@ document.forms[0].submit();
   <div class="form-group">
     <label for="caminho">Selecionar Jogo:</label>
     <input type="file" class="form-control" id="caminho" name="txtCaminho">
+  </div>
+  
+   <div class="form-group">
+    <label for="imagem">Selecionar Imagem:</label>
+    <input type="file" class="form-control" id="imagem" name="txtCaminhoImagem">
   </div>
 
       <!--Fim Modal body -->
