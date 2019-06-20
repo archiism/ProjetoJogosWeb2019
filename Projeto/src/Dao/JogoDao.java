@@ -73,15 +73,11 @@ public class JogoDao {
 			while(rs.next())
 			{
 				jogoDto=new JogoDto();
-				jogoDto.setCaminhoHtml(rs.getString("CAMINHOHTML"));
-				jogoDto.setCategoria(rs.getString("CATEGORIA"));
-				jogoDto.setClassificacao(rs.getString("CLASSIFICACAO"));
-				jogoDto.setDescricao(rs.getString("DESCRICAO"));
+				jogoDto.setCaminhoHtml(rs.getString("CAMINHO"));
 				jogoDto.setDificuldade(rs.getString("DIFICULDADE"));
 				jogoDto.setIdJogo(rs.getInt("IDJOGO"));
 				jogoDto.setNome(rs.getString("NOME"));
-				jogoDto.setQuantidadeJogada(rs.getInt("QUANTIDADEJOGADA"));
-				jogoDto.setManual(rs.getString("MANUAL"));
+				jogoDto.setGenero(rs.getString("GENERO"));
 				
 				jogos.add(jogoDto);
 			}
@@ -109,15 +105,11 @@ public class JogoDao {
 			while(rs.next())
 			{
 				jogoDto=new JogoDto();
-				jogoDto.setCaminhoHtml(rs.getString("CAMINHOHTML"));
-				jogoDto.setCategoria(rs.getString("CATEGORIA"));
-				jogoDto.setClassificacao(rs.getString("CLASSIFICACAO"));
-				jogoDto.setDescricao(rs.getString("DESCRICAO"));
+				jogoDto.setCaminhoHtml(rs.getString("CAMINHO"));
 				jogoDto.setDificuldade(rs.getString("DIFICULDADE"));
 				jogoDto.setIdJogo(rs.getInt("IDJOGO"));
 				jogoDto.setNome(rs.getString("NOME"));
-				jogoDto.setQuantidadeJogada(rs.getInt("QUANTIDADEJOGADA"));
-				jogoDto.setManual(rs.getString("MANUAL"));
+				jogoDto.setGenero(rs.getString("GENERO"));
 				
 				jogos.add(jogoDto);
 			}
