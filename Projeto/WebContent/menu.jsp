@@ -32,7 +32,7 @@ document.forms[0].submit();
 	<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Indie Retr0 GameFlix</a>
+      <a class="navbar-brand" href="#">Indie Retr0 <xss class='text-danger'>GameFlix</xss></a>
     </div>
     <ul class="nav navbar-nav navbar-right">
        <button class="btn btn-primary navbar-btn glyphicon glyphicon-home"> Inicio</button>
@@ -82,7 +82,7 @@ document.forms[0].submit();
   <div class="col-sm-10" style="background-color: lightgray; height: 100%">
 
     <div class="form-group">
-  <label for="comment">Noticias</label>
+  <label calss="text-danger" for="comment"><h2>Noticias</h2></label>
   <textarea class="form-control" rows="10" id="comment" readonly>${noti.assunto} ( ${noti.data } )
   
   
