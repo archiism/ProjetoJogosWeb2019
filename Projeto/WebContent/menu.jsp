@@ -11,7 +11,7 @@ document.forms[0].submit();
 }
 </script>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Indie Retr0 GameFlix</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -37,7 +37,7 @@ document.forms[0].submit();
       <a class="navbar-brand" href="#"><b>Indie Retr0 GameFlix</b></a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-       <button class="btn btn-primary navbar-btn glyphicon glyphicon-home"> Inicio</button>
+       <button class="btn btn-primary navbar-btn glyphicon glyphicon-home" onclick="window.location.href='/Projeto/Menu'"> Inicio</button>
        
      
        <c:if test="${sessionScope.usuarioLogado.getNivelAcesso()!=0 }">
@@ -103,7 +103,7 @@ document.forms[0].submit();
       <p class="title">${listas.nome}</p>
       <p>${listas.genero}</p>
      <!--   <p><button class="btn btn-success">Jogar</button><p> -->
-       <a href="/Projeto/Jogar?jogoJs=${listas.caminhoHtml}" class="btn btn-primary" role="button">Jogar</a>
+       <a href="/Projeto/Jogar?jogoJs=${listas.caminhoHtml}&nome=${listas.nome}" class="btn btn-primary" role="button">Jogar</a>
     </div>
     </c:forEach>
 <!--------------------------->

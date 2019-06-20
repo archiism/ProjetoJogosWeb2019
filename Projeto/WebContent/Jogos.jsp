@@ -11,7 +11,7 @@ document.forms[0].submit();
 }
 </script>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Jogando</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -42,8 +42,8 @@ document.forms[0].submit();
      
        <c:if test="${sessionScope.usuarioLogado.getNivelAcesso()!=0 }">
         <button class="btn btn-primary navbar-btn " onclick="usuarios()">Lista de usuarios</button>
-        <button class="btn btn-primary navbar-btn " data-toggle="modal" data-target="#noticia">Inserir Noticia </button>
-      <button class="btn btn-primary navbar-btn " data-toggle="modal" data-target="#myModal">Cadastrar Jogo </button>
+       <!--   <button class="btn btn-primary navbar-btn " data-toggle="modal" data-target="#noticia">Inserir Noticia </button>
+      <button class="btn btn-primary navbar-btn " data-toggle="modal" data-target="#myModal">Cadastrar Jogo </button> -->
        </c:if>
       
     
@@ -84,15 +84,15 @@ document.forms[0].submit();
   <div class="col-sm-9" style="background-color: lightgray" height:100%>
 
     <div class="form-group">
-  <label calss="text-danger" for="comment"><h2>Noticias</h2></label>
-  <textarea class="form-control" rows="10" id="comment" readonly>${noti.assunto} ( ${noti.data } )
+  <!-- <label calss="text-danger" for="comment"><h2>Noticias</h2></label>
+    <textarea class="form-control" rows="10" id="comment" readonly>${noti.assunto} ( ${noti.data } ) 
   
   
-  ${ noti.texto}</textarea>
+  ${ noti.texto}</textarea> -->
 </div>
 
     <div class="text-center">
-      <H1 style="text-align: center;">LISTA DE JOGOS</H1>
+      <H1 style="text-align: center;">${nomeJogo}</H1>
     </div>
 <!--------------------------->
 

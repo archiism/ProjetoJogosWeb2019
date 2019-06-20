@@ -1,4 +1,4 @@
-package Servlets.Jogos;
+package Servlet.Menu;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,23 +9,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import Bus.JogoBus;
 import Dto.JogoDto;
 
 /**
- * Servlet implementation class Aventura
+ * Servlet implementation class Menu
  */
-@WebServlet("/Aventura")
-public class Aventura extends HttpServlet {
+@WebServlet("/Menu")
+public class Menu extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private JogoBus jogoBus = new JogoBus();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Aventura() {
+    public Menu() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,26 +33,19 @@ public class Aventura extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session=request.getSession(false);
-		if(session==null)
-			response.sendRedirect("/Projeto/index.jsp");
-		else
+		
+		try
 		{
-			try
-			{
-				List<JogoDto> jogos=jogoBus.ListaJogosCategoria("Aventura");
-				request.setAttribute("jogos", jogos);
-				
-				RequestDispatcher rd = getServletContext().getRequestDispatcher("/menu.jsp");
-				rd.forward(request, response);
-				response.sendRedirect("/Projeto/Jogos.jsp");
-				
-			}catch(Exception e)
-			{
-				
-			}
+			List<JogoDto> jogos=jogoBus.ListaJogos();
+			request.setAttribute("jogos", jogos);
+			
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/menu.jsp");
+			rd.forward(request, response);
+		}catch(Exception e)
+		{
 			
 		}
+		
 	}
 
 	/**

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Lista de usuários</title>
+<title>Lista de Usuários</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -30,7 +30,7 @@
       <a class="navbar-brand" href="./menu.jsp"><b>Indie Retr0 GameFlix</b></a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-       <button class="btn btn-primary navbar-btn glyphicon glyphicon-home" onclick="window.location.href='./menu.jsp'"> Inicio</button>
+       <button class="btn btn-primary navbar-btn glyphicon glyphicon-home" onclick="window.location.href='/Projeto/Menu'"> Inicio</button>
        
      
        <c:if test="${sessionScope.usuarioLogado.getNivelAcesso()!=0 }">
@@ -64,9 +64,9 @@
         </div>
         <div class="navbar-collapse collapse sidebar-navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#">Ação</a></li>
-            <li><a href="#">Aventura</a></li>
-            <li><a href="#">Corrida</a></li>
+            <li><a href="/Projeto/Acao">Ação</a></li>
+            <li><a href="/Projeto/Aventura">Aventura</a></li>
+            <li><a href="/Projeto/Corrida">Corrida</a></li>
         
             <!--<li><a href="#">Reviews <span class="badge">1,118</span></a></li> -->
           </ul>

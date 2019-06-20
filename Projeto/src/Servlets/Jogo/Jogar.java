@@ -29,7 +29,10 @@ public class Jogar extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String game=request.getParameter("jogoJs");
+		String nome=request.getParameter("nome");
+		
 		request.setAttribute("game",game);
+		request.setAttribute("nomeJogo", nome);
 		
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/Jogos.jsp");
 		rd.forward(request, response);

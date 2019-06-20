@@ -97,7 +97,7 @@ public class JogoDao {
 			if(!VerifiqueConexao())
 				return jogos;
 			
-			sql="SELECT * FROM JOGO where categoria=?";
+			sql="SELECT * FROM JOGO where GENERO=?";
 			pst=con.prepareStatement(sql);
 			pst.setString(1, categoria);
 			rs=pst.executeQuery();
@@ -110,6 +110,7 @@ public class JogoDao {
 				jogoDto.setIdJogo(rs.getInt("IDJOGO"));
 				jogoDto.setNome(rs.getString("NOME"));
 				jogoDto.setGenero(rs.getString("GENERO"));
+				jogoDto.setImagem(rs.getString("IMAGEM"));
 				
 				jogos.add(jogoDto);
 			}
