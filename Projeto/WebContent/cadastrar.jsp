@@ -20,7 +20,7 @@
 	<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Indie Retr0 GameFlix</a>
+      <a class="navbar-brand" href="#"><b>Indie Retr0 GameFlix</b></a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       
@@ -29,11 +29,9 @@
   </div>
 </nav>
 
-	<div class="container">
+	<div class="container" id="cadastro">
 <div class="row">
-  <div class="col-sm-2">
-    
-  </div>
+  
   <div class="col-sm-8" style="background-color: lightgray; height: 100%">
 
     
@@ -88,7 +86,8 @@
   <hr/>
   <div class="row">
     <div class="col-md-12">
-      <br><button class="btn btn-primary" type="submit">Confirmar</button><br>
+      <br><button class="btn btn-primary" type="submit">Confirmar</button>
+      <a href="/Projeto/index.jsp" class="btn btn-danger" role="button">Cancelar</a><br><p></p>
     </div>
   </div>
   

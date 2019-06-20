@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="utf-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%@ page import="java.util.*"%>
@@ -27,7 +27,7 @@
 	<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="./menu.jsp">Indie Retr0 GameFlix</a>
+      <a class="navbar-brand" href="./menu.jsp"><b>Indie Retr0 GameFlix</b></a>
     </div>
     <ul class="nav navbar-nav navbar-right">
        <button class="btn btn-primary navbar-btn glyphicon glyphicon-home" onclick="window.location.href='./menu.jsp'"> Inicio</button>
@@ -48,7 +48,7 @@
   </div>
 </nav>
 
-	<div class="container">
+	<div class="container-fluid">
 <div class="row">
   <div class="col-sm-2">
     <div class="sidebar-nav">
@@ -74,10 +74,10 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-10" style="background-color: lightgray; height: 100%">
+  <div class="col-sm-9" style="background-color: lightgray; height: 100%">
 
     <div class="form-group">
-  <label for="comment">Noticias</label>
+  <label for="comment"><h2>Noticias</h2></label>
   <textarea class="form-control" rows="10" id="comment" readonly>${noti.assunto} ( ${noti.data } )
   
   
