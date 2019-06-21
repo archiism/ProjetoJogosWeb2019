@@ -18,7 +18,7 @@ document.forms[0].submit();
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   
   <link rel="stylesheet" type="text/css" href="./Contents/css/style.css">
- 
+	 <link rel="stylesheet" type="text/css" href="./Contents/css/comentario.css">
   <c:if test="${sessionScope.logado != 'verdade'}">
 	<c:redirect url="/index.jsp">/</c:redirect>
 </c:if>

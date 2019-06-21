@@ -16,6 +16,7 @@ document.forms[0].submit();
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel='stylesheet' href='./Contents/css/comentario.css'>
   
   <link rel="stylesheet" type="text/css" href="./Contents/css/style.css">
  
@@ -120,6 +121,21 @@ document.forms[0].submit();
                         </script>
 
                     <script src='${game}'></script>
+                    <h2 class='comentarios'>Comentarios</h2>
+                    <table class='table table-hover table-dark'>
+                    	<tr>
+                    		<th scope='col' id='cNome'>Nome </th>
+                    		<th scope='col'id='cComent'>Comentario </th>
+                    	</tr>
+                    </table>
+                    <div class="form-group shadow-textarea">
+ 						 <label for="exampleFormControlTextarea6">Novo Comentario</label>
+ 						 <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Escreva Aqui"></textarea>
+ 						 		<button class="btn btn-primary navbar-btn " >Enviar</button>
+ 						 		<button class="btn btn-danger navbar-btn"> Limpar</button>
+ 						
+					</div>
+                    
                    
                     
 <!--------------------------->
