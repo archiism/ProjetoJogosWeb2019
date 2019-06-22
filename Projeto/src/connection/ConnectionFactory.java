@@ -23,7 +23,7 @@ public class ConnectionFactory {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto?useTimezone=true&serverTimezone=UTC", "root","");
 			
-			//metodo de conex„o 2
+			//metodo de conex√£o 2
 			
 			/*MysqlDataSource ds=new MysqlDataSource();
 			ds.setUser(user);
@@ -31,7 +31,7 @@ public class ConnectionFactory {
 	        ds.setServerName(server);
 	       // ds.setPortNumber(porta);
 	        ds.setDatabaseName(dataBase);	
-	        con=ds.getConnection();
+	        con=ds.getConnection();;
 	        */
 		} catch (SQLException e) {
 			e.getMessage();
