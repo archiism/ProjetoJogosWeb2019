@@ -3,7 +3,10 @@ package Dao;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 import Dto.ComentarioDto;
 import connection.ConnectionFactory;
@@ -11,8 +14,9 @@ import connection.ConnectionFactory;
 public class ComentarioDao {
 	private Connection con=null;
 	private String sql="";
-	PreparedStatement pst;
-	
+	private PreparedStatement pst;
+	private ResultSet rs;
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	public Date converte(String data) {    
 		SimpleDateFormat forma = new SimpleDateFormat("dd/MM/yyyy");
 		Date dataRetorno = null;
@@ -49,9 +53,9 @@ public class ComentarioDao {
 				return false;
 			
 			
-			sql="INSERT INTO COMENTARIO(DATA, COMENTARIO, IDUSUARIO, IDJOGO) VALUES(?,?,?,?)";
+			sql="INSERT INTO COMENTARIOS(DATA, COMENTARIO, IDUSUARIO, IDJOGO) VALUES(?,?,?,?)";
 			pst=con.prepareStatement(sql);
-			pst.setDate(1, this.converte(comentarioDto.getData()));
+			pst.setString(1, comentarioDto.getData());
 			pst.setString(2, comentarioDto.getComentario());
 			pst.setInt(3, comentarioDto.getIdUsuario());
 			pst.setInt(4, comentarioDto.getIdJogo());
@@ -61,6 +65,41 @@ public class ComentarioDao {
 		{
 			throw new Exception(e.getMessage());
 		}
+	}
+	public List<ComentarioDto> Lista(int cod) throws Exception
+	{
+		List<ComentarioDto> comentarios = new ArrayList<ComentarioDto>();
+		ComentarioDto comentarioDto=null;
+		try
+		{
+			if(!VerifiqueConexao())
+				return comentarios;
+			sql="SELECT comentarios.COMENTARIO, comentarios.DATA, usuario.NOME FROM COMENTARIOS "
+					+ "INNER JOIN USUARIO ON COMENTARIOS.IDUSUARIO=USUARIO.IDUSUARIO "
+					+ "INNER JOIN JOGO ON COMENTARIOS.IDJOGO=JOGO.IDJOGO WHERE COMENTARIOS.IDJOGO=?";
+			
+			pst=con.prepareStatement(sql);
+			pst.setInt(1, cod);
+			rs=pst.executeQuery();
+			
+			while(rs.next())
+			{
+				comentarioDto = new ComentarioDto();
+				comentarioDto.setComentario(rs.getString("COMENTARIO"));
+				comentarioDto.setIdUsuario(rs.getInt("IDUSUARIO"));
+				comentarioDto.setIdJogo(rs.getInt("IDJOGO"));
+				comentarioDto.setIdComentario(rs.getInt("IDCOMENTARIOS"));
+				Date data=rs.getDate("DATA");
+				comentarioDto.setData(sdf.format(data));
+				
+				comentarios.add(comentarioDto);
+			}
+			
+		}catch(Exception e)
+		{
+			throw new Exception(e.getMessage());
+		}
+		return comentarios;
 	}
 
 }

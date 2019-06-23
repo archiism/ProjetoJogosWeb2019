@@ -1,6 +1,7 @@
 package Servlets.Jogo;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,12 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Bus.ComentariosBus;
+import Dto.ComentarioDto;
+
 /**
  * Servlet implementation class Jogar
  */
 @WebServlet("/Jogar")
 public class Jogar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	ComentariosBus comentarioBus = new ComentariosBus();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -30,10 +35,20 @@ public class Jogar extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String game=request.getParameter("jogoJs");
 		String nome=request.getParameter("nome");
+		int idJogo= Integer.parseInt((String)request.getParameter("codigo"));
+		List<ComentarioDto> comentarios=null;
 		
 		request.setAttribute("game",game);
 		request.setAttribute("nomeJogo", nome);
 		
+		try
+		{
+			comentarios=comentarioBus.Listar(idJogo);
+			request.setAttribute("post", comentarios);
+		}catch(Exception e)
+		{
+			
+		}
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/Jogos.jsp");
 		rd.forward(request, response);
 	}

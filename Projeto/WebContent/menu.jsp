@@ -102,7 +102,7 @@ document.forms[0].submit();
       <p class="title">${listas.nome}</p>
       <p>${listas.genero}</p>
      <!--   <p><button class="btn btn-success">Jogar</button><p> -->
-       <a href="/Projeto/Jogar?jogoJs=${listas.caminhoHtml}&nome=${listas.nome}" class="btn btn-primary" role="button">Jogar</a>
+       <a href="/Projeto/Jogar?jogoJs=${listas.caminhoHtml}&nome=${listas.nome}&codigo=${listas.idJogo}" class="btn btn-primary" role="button">Jogar</a>
     </div>
     </c:forEach>
 <!--------------------------->
