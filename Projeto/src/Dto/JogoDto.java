@@ -17,6 +17,10 @@ public class JogoDto implements Serializable {
 	{
 		
 	}
+	public JogoDto(int cod)
+	{
+		this.idJogo=cod;
+	}
 
 	public String getImagem() {
 		return imagem;

@@ -45,5 +45,17 @@ public class UsuarioBus {
 		}
 		return usuarios;
 	}
+	
+	public UsuarioDto RetornarRegistro(int cod) throws Exception
+	{
+		try
+		{
+			return usuarioDAO.RetornarRegistro(cod);
+			
+		}catch(Exception e)
+		{
+			throw new Exception(e.getMessage());
+		}
+	}
 
 }

@@ -1,6 +1,8 @@
 package Servlets.Comentario;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -13,6 +15,8 @@ import javax.servlet.http.HttpSession;
 
 import Bus.ComentariosBus;
 import Dto.ComentarioDto;
+import Dto.JogoDto;
+import Dto.UsuarioDto;
 
 /**
  * Servlet implementation class Incluir
@@ -22,6 +26,8 @@ public class Incluir extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	ComentarioDto comentarioDto=new ComentarioDto();
 	ComentariosBus comentarioBus = new ComentariosBus();
+	JogoDto jogoDto = new JogoDto();
+	UsuarioDto usuarioDto = new UsuarioDto();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -48,16 +54,21 @@ public class Incluir extends HttpServlet {
 			response.sendRedirect("/index.jsp");
 		else
 		{
-			String comentario="";
-			String data="";
-			int usuario=0;
-			int jogo=0;
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			String data=sdf.format(new Date(System.currentTimeMillis()));
+			
+			UsuarioDto user=(UsuarioDto)session.getAttribute("usuarioLogado");
+			String comentario=request.getParameter("txtComentarios");			
+			int usuario=user.getIdUsuario();
+			int jogo=Integer.parseInt(String.valueOf(session.getAttribute("idJogo")));			
 			List<ComentarioDto> comentarios=null;
 			
 			comentarioDto.setComentario(comentario);
 			comentarioDto.setData(data);
-			comentarioDto.setIdJogo(jogo);
 			comentarioDto.setIdUsuario(usuario);
+			comentarioDto.setIdJogo(jogo);
+			
+			
 			
 			try
 			{

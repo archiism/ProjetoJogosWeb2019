@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Dto.ComentarioDto;
+import Dto.JogoDto;
+import Dto.UsuarioDto;
 import connection.ConnectionFactory;
 
 public class ComentarioDao {
@@ -57,8 +59,8 @@ public class ComentarioDao {
 			pst=con.prepareStatement(sql);
 			pst.setString(1, comentarioDto.getData());
 			pst.setString(2, comentarioDto.getComentario());
-			pst.setInt(3, comentarioDto.getIdUsuario());
-			pst.setInt(4, comentarioDto.getIdJogo());
+			pst.setInt(3, comentarioDto.getIdJogo());
+			pst.setInt(4, comentarioDto.getIdUsuario());
 			return pst.executeUpdate() > 0?true:false;
 			
 		}catch(Exception e)
@@ -70,6 +72,12 @@ public class ComentarioDao {
 	{
 		List<ComentarioDto> comentarios = new ArrayList<ComentarioDto>();
 		ComentarioDto comentarioDto=null;
+		JogoDto jogoDto = new JogoDto();
+		JogoDao jogoDao = new JogoDao();
+		UsuarioDto usuarioDto = new UsuarioDto();
+		UsuarioDAO usuarioDao = new UsuarioDAO();
+		int codJogo;
+		int codUsuario;
 		try
 		{
 			if(!VerifiqueConexao())
@@ -86,11 +94,19 @@ public class ComentarioDao {
 			{
 				comentarioDto = new ComentarioDto();
 				comentarioDto.setComentario(rs.getString("COMENTARIO"));
-				comentarioDto.setIdUsuario(rs.getInt("IDUSUARIO"));
-				comentarioDto.setIdJogo(rs.getInt("IDJOGO"));
 				comentarioDto.setIdComentario(rs.getInt("IDCOMENTARIOS"));
 				Date data=rs.getDate("DATA");
 				comentarioDto.setData(sdf.format(data));
+				comentarioDto.setIdJogo(rs.getInt("IDJOGO"));
+				
+				codJogo=rs.getInt("IDJOGO");
+				codUsuario=rs.getInt("IDUSUARIO");
+				
+				jogoDto=jogoDao.RetornarRegistro(codJogo);
+				usuarioDto=usuarioDao.RetornarRegistro(codUsuario);
+				
+				comentarioDto.setJogoDto(jogoDto);
+				comentarioDto.setUsuarioDto(usuarioDto);
 				
 				comentarios.add(comentarioDto);
 			}

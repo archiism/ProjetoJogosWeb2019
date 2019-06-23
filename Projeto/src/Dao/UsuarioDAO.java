@@ -206,4 +206,29 @@ public class UsuarioDAO {
 		}
 		return usuarios;
 	}
+	
+	public UsuarioDto RetornarRegistro(int cod) throws Exception
+	{
+		UsuarioDto usuarioDto=null;
+		try
+		{
+			if(!VerifiqueConexao())
+				return usuarioDto;
+			sql="SELECT * FROM USUARIO WHERE IDUSUARIO=?";
+			pst=con.prepareStatement(sql);
+			pst.setInt(1, cod);
+			rs=pst.executeQuery();
+			
+			while(rs.next())
+			{
+				usuarioDto = new UsuarioDto();
+				usuarioDto.setIdUsuario(rs.getInt("IDUSUARIO"));
+				usuarioDto.setNome(rs.getString("NOME"));
+			}
+		}catch(Exception e)
+		{
+			throw new Exception("NÃOo foi possivel executar o comando "+e);
+		}
+		return usuarioDto;
+	}
 }

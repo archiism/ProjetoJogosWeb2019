@@ -120,5 +120,32 @@ public class JogoDao {
 		}
 		return jogos;
 	}
+	
+	public JogoDto RetornarRegistro(int cod) throws Exception
+	{
+		JogoDto jogoDto=null;
+		
+		try
+		{
+			if(!VerifiqueConexao())
+				return jogoDto;
+			
+			sql="SELECT * FROM USUARIO WHERE IDUSUARIO=?";
+			pst=con.prepareStatement(sql);
+			pst.setInt(1, cod);
+			rs=pst.executeQuery();
+			
+			while(rs.next())
+			{
+				jogoDto = new JogoDto();
+				jogoDto.setIdJogo(rs.getInt("IDJOGO"));
+				jogoDto.setNome(rs.getString("NOME"));
+			}
+		}catch(Exception e)
+		{
+			
+		}
+		return jogoDto;
+	}
 
 }

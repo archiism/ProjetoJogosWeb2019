@@ -6,8 +6,21 @@ public class ComentarioDto {
 	private int idJogo;
 	private int idUsuario;
 	private String data;
+	private JogoDto jogoDto;
+	private UsuarioDto usuarioDto;
 	
-	
+	public UsuarioDto getUsuarioDto() {
+		return usuarioDto;
+	}
+	public void setUsuarioDto(UsuarioDto usuarioDto) {
+		this.usuarioDto = usuarioDto;
+	}
+	public JogoDto getJogoDto() {
+		return jogoDto;
+	}
+	public void setJogoDto(JogoDto jogoDto) {
+		this.jogoDto = jogoDto;
+	}
 	public String getData() {
 		return data;
 	}
@@ -38,6 +51,10 @@ public class ComentarioDto {
 	public void setIdUsuario(int idUsuario) {
 		this.idUsuario = idUsuario;
 	}
+	
+	
+	
+	
 	
 	
 	

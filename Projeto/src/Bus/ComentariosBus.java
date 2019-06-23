@@ -4,6 +4,7 @@ import java.util.List;
 
 import Dao.ComentarioDao;
 import Dto.ComentarioDto;
+import Dto.JogoDto;
 
 public class ComentariosBus {
 	ComentarioDao comentarioDao= new ComentarioDao();

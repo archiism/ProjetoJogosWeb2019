@@ -43,5 +43,16 @@ public class JogoBus {
 		}
 		return jogos;
 	}
+	
+	public JogoDto RetornarRegistro(int cod) throws Exception
+	{
+		try
+		{
+			return jogoDao.RetornarRegistro(cod);
+		}catch(Exception e)
+		{
+			throw new Exception(e.getMessage());
+		}
+	}
 
 }

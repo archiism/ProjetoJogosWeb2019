@@ -63,6 +63,7 @@ public class Login extends HttpServlet {
 				HttpSession sessao = request.getSession(true);
 				//sessao.setMaxInactiveInterval(60);
 				sessao.setAttribute("usuarioLogado", user);
+				sessao.setAttribute("usuario", user.getNome());
 				
 				List<JogoDto> jogos=jogoBus.ListaJogos();
 				
