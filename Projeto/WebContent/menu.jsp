@@ -97,9 +97,9 @@ document.forms[0].submit();
 
 			<!--  lISTA DOS JOGOS -->
 	 <c:forEach var="listas" items="${jogos}">		
-    <div class="card">
+    <div class="cartao">
       <img src="${listas.imagem }" alt="John" style="width:100%; height: 150px">
-      <p class="title">${listas.nome}</p>
+      <p class="titulo">${listas.nome}</p>
       <p>${listas.genero}</p>
      <!--   <p><button class="btn btn-success">Jogar</button><p> -->
        <a href="/Projeto/Jogar?jogoJs=${listas.caminhoHtml}&nome=${listas.nome}&codigo=${listas.idJogo}" class="btn btn-primary" role="button">Jogar</a>

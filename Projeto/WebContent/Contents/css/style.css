@@ -26,7 +26,7 @@ body{
   }
 }
 
-.card {
+.cartao {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 15%;
   margin: 12px;
@@ -34,9 +34,10 @@ body{
   float: left;
 }
 
-.title {
-  color: gray;
+.titulo {
+  color: #0f117f;
   font-size: 18px;
+  
 }
 
 a {
