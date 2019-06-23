@@ -126,20 +126,23 @@ document.forms[0].submit();
                  
                  <c:forEach var="posts" items="${post}">
                  <c:set var="id" value="${posts.usuarioDto.nome}"/>
-                 <c:if test="${id==usuario}">
+                 <c:choose>
+                 <c:when test="${id==usuario}">
+                 
                     <div class="caixa escuro">
   						<span class="direita"><strong>${posts.usuarioDto.nome}</strong></span>
  						 <p>${posts.comentario}</p>
  						 <span class="time-right">${posts.data}</span>
 					</div>
-					
+					</c:when>
+					<c:otherwise>
 					<div class="caixa">
- 						 <span><strong>Nome</strong></span>
- 						 <p>Hey! I'm fine. Thanks for asking!</p>
-  						 <span class="time-right">11:01</span>
+ 						 <span><strong>${posts.usuarioDto.nome }</strong></span>
+ 						 <p>${posts.comentario}</p>
+  						 <span class="time-right">${posts.data}</span>
 					</div>
-					
-					</c:if>
+					</c:otherwise>
+					</c:choose>
                     </c:forEach>
                     
                     
@@ -153,7 +156,7 @@ document.forms[0].submit();
                     <form action="/Projeto/IncluirComentario" method="post">
                     <div class="form-group shadow-textarea" id='comentarioDiv'>
  						 <label for="exampleFormControlTextarea6">Novo Comentario</label>
- 						 <textarea name="txtComentarios" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Escreva Aqui">2121</textarea>
+ 						 <textarea name="txtComentarios" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Escreva Aqui"></textarea>
  						
  						 		<button class="btn btn-primary navbar-btn "  type="submit">Enviar</button>
  						 		
