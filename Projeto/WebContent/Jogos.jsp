@@ -144,10 +144,10 @@ document.forms[0].submit();
                     
                     <div class="form-group shadow-textarea" id='comentarioDiv'>
  						 <label for="exampleFormControlTextarea6">Novo Comentario</label>
- 						 <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Escreva Aqui"></textarea>
- 						<a href="/Projeto/" class="btn btn-primary" role="button">Enviar</a>
+ 						 <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Escreva Aqui">2121</textarea>
+ 						
  						 		<button class="btn btn-primary navbar-btn " >Enviar</button>
- 						 		
+ 						 		<button class="btn btn-danger navbar-btn" id='escrever'> Escrever</button>
  						
 					</div>
                    
@@ -170,9 +170,108 @@ document.forms[0].submit();
 
     
 
+<form method="Post" action="/Projeto/CadastrarJogo">
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Cadastrar Jogo</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+
+<div class="form-group">
+    <label for="nome">Nome do Jogo:</label>
+    <input type="text" class="form-control" id="nome" name="txtNome">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Dificuldade:</label>
+    <select class="form-control" id="pwd" name="txtDificuldade">
+      <option value="1">Facil</option>
+      <option value="2">Médio</option>
+      <option value="3">Dificil</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="genero">Gênero:</label>
+    <select class="form-control" id="genero" name="txtGenero">
+      <option value="1">Ação</option>
+      <option value="2">Aventura</option>
+      <option value="3">Corrida</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="caminho">Selecionar Jogo:</label>
+    <input type="file" class="form-control" id="caminho" name="txtCaminho">
+  </div>
+  
+   <div class="form-group">
+    <label for="imagem">Selecionar Imagem:</label>
+    <input type="file" class="form-control" id="imagem" name="txtCaminhoImagem">
+  </div>
+
+      <!--Fim Modal body -->
+      <div class="modal-body">
+        
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-primary" value="Salvar">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+</form>
 
 <!-- Outro Modal -->
+<form method="Post" action="/Projeto/CadNoticia">
+<!-- The Modal -->
+<div class="modal fade" id="noticia">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
 
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Inserir Noticia</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+
+<div class="form-group">
+    <label for="nome">Titulo:</label>
+    <input type="text" class="form-control" id="nome" name="txtTitulo">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Assunto:</label>
+    <textarea class="form-control" rows="10" name="txtAssunto">
+  </textarea>
+  
+
+      <!--Fim Modal body -->
+      <div class="modal-body">
+        
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-primary" value="Salvar">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+</form>
 <!--  fim -->
   </div>
 </div>
