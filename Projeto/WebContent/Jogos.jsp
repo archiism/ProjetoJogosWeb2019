@@ -19,6 +19,7 @@ document.forms[0].submit();
   <link rel='stylesheet' href='./Contents/css/comentario.css'>  
   <link rel="stylesheet" type="text/css" href="./Contents/css/style.css">
   <link rel="stylesheet" type="text/css" href="./Contents/css/post.css">
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
  
   <c:if test="${sessionScope.logado != 'verdade'}">
 	<c:redirect url="/index.jsp">/</c:redirect>
@@ -108,20 +109,18 @@ document.forms[0].submit();
                         <div>
                             <canvas style="margin: 0 auto; display: block;" id="canvas" oncontextmenu="event.preventDefault()" onmousedown="window.focus()"></canvas>
                         </div>
-                    
-                        <div id="add-modal" class="modal">
+                    	<div id="add-modal" class="modal">
                             <div class="modal-content">
                                 <span class="close">&times</span>
                                 <p>Select a file to add to the computer</p>
                                 <p><input type="file" id="upload-input"></input></p>
                             </div>
                         </div>
+                        
                     
-                        <script type="text/javascript">
-                            var Module = {canvas: document.getElementById('canvas')};   
-                        </script>
-
-                    <script src='${game}'></script>
+                        
+                     
+                   
                     
                     <h2 class='comentarios'>Comentários</h2>
                     <!------------------------------------------------------>
@@ -143,16 +142,29 @@ document.forms[0].submit();
                     
                     <!-- ---------------------------------------------------->
                     
-                    <div class="form-group shadow-textarea">
+                    <div class="form-group shadow-textarea" id='comentarioDiv'>
  						 <label for="exampleFormControlTextarea6">Novo Comentario</label>
- 						 <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Escreva Aqui"></textarea>
+ 						 <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Escreva Aqui">2121</textarea>
  						
  						 		<button class="btn btn-primary navbar-btn " >Enviar</button>
- 						 		<button class="btn btn-danger navbar-btn"> Limpar</button>
+ 						 		<button class="btn btn-danger navbar-btn" id='escrever'> Escrever</button>
  						
 					</div>
-                    
                    
+                      <script type="text/javascript">
+                        var Module = {canvas: document.getElementById('canvas')};
+                        var jogo = document.querySelector('#jogo');
+                        var text = document.querySelector('#comentarioDiv');
+                        var jogo2 = document.querySelector('#jogo2');
+
+
+                        console.log(text);
+                        text.addEventListener('click',function(){
+                        	  Module= {canvas:document.getElementById('') };
+                        	})
+                    	</script>
+
+                   <script id='jogo' src='${game}'></script>
                     
 <!--------------------------->
    

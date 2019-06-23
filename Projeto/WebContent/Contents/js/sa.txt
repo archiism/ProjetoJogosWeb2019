@@ -1,0 +1,15 @@
+oncontextmenu="event.preventDefault()" onmousedown="window.focus()"
+
+<div id="add-modal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times</span>
+                                <p>Select a file to add to the computer</p>
+                                <p><input type="file" id="upload-input"></input></p>
+                            </div>
+                        </div>
+
+
+
+                         <script id='jogo2'type="text/javascript">
+                            var Module = {canvas: document.getElementById('canvas')};   
+                        </script>
