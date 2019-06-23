@@ -16,15 +16,16 @@ document.forms[0].submit();
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <link rel='stylesheet' href='./Contents/css/comentario.css'>
-  
+  <link rel='stylesheet' href='./Contents/css/comentario.css'>  
   <link rel="stylesheet" type="text/css" href="./Contents/css/style.css">
+  <link rel="stylesheet" type="text/css" href="./Contents/css/post.css">
  
   <c:if test="${sessionScope.logado != 'verdade'}">
 	<c:redirect url="/index.jsp">/</c:redirect>
 </c:if>
 </head>
 <body >
+
 <%
 		response.setHeader("Cache-Control", "no-cache");
 		response.setHeader("Cache-Control", "no-store");
@@ -86,7 +87,7 @@ document.forms[0].submit();
 
     <div class="form-group">
   <!-- <label calss="text-danger" for="comment"><h2>Noticias</h2></label>
-    <textarea class="form-control" rows="10" id="comment" readonly>${noti.assunto} ( ${noti.data } ) 
+    <textarea class="form-control" rows="10" id="comment" >${noti.assunto} ( ${noti.data } ) 
   
   
   ${ noti.texto}</textarea> -->
@@ -121,16 +122,31 @@ document.forms[0].submit();
                         </script>
 
                     <script src='${game}'></script>
-                    <h2 class='comentarios'>Comentarios</h2>
-                    <table class='table table-hover table-dark'>
-                    	<tr>
-                    		<th scope='col' id='cNome'>Nome </th>
-                    		<th scope='col'id='cComent'>Comentario </th>
-                    	</tr>
-                    </table>
+                    
+                    <h2 class='comentarios'>Comentários</h2>
+                    <!------------------------------------------------------>
+                   
+                 <div class="corpo">
+                    <div class="caixa">
+  						<span><strong>Nome</strong></span>
+ 						 <p>Hello. How are you today?</p>
+ 						 <span class="time-right">11:00</span>
+					</div>
+                    
+                    <div class="caixa escuro">
+ 						 <span class="direita"><strong>Nome</strong></span>
+ 						 <p>Hey! I'm fine. Thanks for asking!</p>
+  						 <span class="time-right">11:01</span>
+					</div>
+                 </div>
+                    
+                    
+                    <!-- ---------------------------------------------------->
+                    
                     <div class="form-group shadow-textarea">
  						 <label for="exampleFormControlTextarea6">Novo Comentario</label>
  						 <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Escreva Aqui"></textarea>
+ 						
  						 		<button class="btn btn-primary navbar-btn " >Enviar</button>
  						 		<button class="btn btn-danger navbar-btn"> Limpar</button>
  						

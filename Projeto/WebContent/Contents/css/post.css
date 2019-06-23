@@ -1,0 +1,42 @@
+.caixa {
+  border: 2px solid #dedede;
+  background-color: #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.escuro {
+  border-color: #ccc;
+  background-color: #8bd6f4;
+}
+
+.caixa::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+.direita{
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+.corpo {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 2px 20px;
+  background-color:#eaedeb;
+  overflow: auto;
+  height: 300px;
+}
