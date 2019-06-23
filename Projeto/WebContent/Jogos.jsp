@@ -120,20 +120,21 @@ document.forms[0].submit();
                     
                     <h2 class='comentarios'>Comentários</h2>
                     <!------------------------------------------------------>
-                   
-                 <div class="corpo">
+                     
+                
+                     <div class="corpo">
                  
                  <c:forEach var="posts" items="${post}">
-                 <c:set var="id" value="${posts.nome}"/>
+                 <c:set var="id" value="${posts.usuarioDto.nome}"/>
                  <c:if test="${id==usuario}">
-                    <div class="caixa">
-  						<span><strong>${posts.nome}</strong></span>
+                    <div class="caixa escuro">
+  						<span class="direita"><strong>${posts.usuarioDto.nome}</strong></span>
  						 <p>${posts.comentario}</p>
  						 <span class="time-right">${posts.data}</span>
 					</div>
 					
-					<div class="caixa escuro">
- 						 <span class="direita"><strong>Nome</strong></span>
+					<div class="caixa">
+ 						 <span><strong>Nome</strong></span>
  						 <p>Hey! I'm fine. Thanks for asking!</p>
   						 <span class="time-right">11:01</span>
 					</div>
@@ -143,14 +144,17 @@ document.forms[0].submit();
                     
                     
                  </div>
-                    
-                    
+                    <!--  
+                    <c:forEach var="posts" items="${post}">
+                    ${posts.comentario}
+                    ${posts.usuarioDto.nome }
+                    </c:forEach> -->
                     <!-- ---------------------------------------------------->
                     <form action="/Projeto/IncluirComentario" method="post">
                     <div class="form-group shadow-textarea" id='comentarioDiv'>
  						 <label for="exampleFormControlTextarea6">Novo Comentario</label>
  						 <textarea name="txtComentarios" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Escreva Aqui">2121</textarea>
- 						<a href="/Projeto/IncluirComentario" class="btn btn-primary" role="button">Enviar</a>
+ 						
  						 		<button class="btn btn-primary navbar-btn "  type="submit">Enviar</button>
  						 		
  						

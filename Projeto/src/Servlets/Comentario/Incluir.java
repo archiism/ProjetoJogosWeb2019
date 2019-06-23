@@ -54,9 +54,9 @@ public class Incluir extends HttpServlet {
 			response.sendRedirect("/index.jsp");
 		else
 		{
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 			String data=sdf.format(new Date(System.currentTimeMillis()));
-			
+			//String data="2008/02/14";
 			UsuarioDto user=(UsuarioDto)session.getAttribute("usuarioLogado");
 			String comentario=request.getParameter("txtComentarios");			
 			int usuario=user.getIdUsuario();

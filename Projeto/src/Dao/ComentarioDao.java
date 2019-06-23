@@ -55,7 +55,7 @@ public class ComentarioDao {
 				return false;
 			
 			
-			sql="INSERT INTO COMENTARIOS(DATA, COMENTARIO, IDUSUARIO, IDJOGO) VALUES(?,?,?,?)";
+			sql="INSERT INTO COMENTARIOS(DATA, COMENTARIO, IDJOGO, IDUSUARIO) VALUES(?,?,?,?)";
 			pst=con.prepareStatement(sql);
 			pst.setString(1, comentarioDto.getData());
 			pst.setString(2, comentarioDto.getComentario());
@@ -82,7 +82,7 @@ public class ComentarioDao {
 		{
 			if(!VerifiqueConexao())
 				return comentarios;
-			sql="SELECT comentarios.COMENTARIO, comentarios.DATA, usuario.NOME FROM COMENTARIOS "
+			sql="SELECT comentarios.COMENTARIO, comentarios.DATA,jogo.idjogo,usuario.idusuario, usuario.NOME FROM COMENTARIOS "
 					+ "INNER JOIN USUARIO ON COMENTARIOS.IDUSUARIO=USUARIO.IDUSUARIO "
 					+ "INNER JOIN JOGO ON COMENTARIOS.IDJOGO=JOGO.IDJOGO WHERE COMENTARIOS.IDJOGO=?";
 			
@@ -94,10 +94,10 @@ public class ComentarioDao {
 			{
 				comentarioDto = new ComentarioDto();
 				comentarioDto.setComentario(rs.getString("COMENTARIO"));
-				comentarioDto.setIdComentario(rs.getInt("IDCOMENTARIOS"));
+				//comentarioDto.setIdComentario(rs.getInt("IDCOMENTARIOS"));
 				Date data=rs.getDate("DATA");
 				comentarioDto.setData(sdf.format(data));
-				comentarioDto.setIdJogo(rs.getInt("IDJOGO"));
+				//comentarioDto.setIdJogo(rs.getInt("IDJOGO"));
 				
 				codJogo=rs.getInt("IDJOGO");
 				codUsuario=rs.getInt("IDUSUARIO");
