@@ -98,7 +98,7 @@ document.forms[0].submit();
 			<!--  lISTA DOS JOGOS -->
 	 <c:forEach var="listas" items="${jogos}">		
     <div class="card">
-      <img src="${listas.imagem }" alt="John" style="width:100%">
+      <img src="${listas.imagem }" alt="John" style="width:100%; height: 150px">
       <p class="title">${listas.nome}</p>
       <p>${listas.genero}</p>
      <!--   <p><button class="btn btn-success">Jogar</button><p> -->
