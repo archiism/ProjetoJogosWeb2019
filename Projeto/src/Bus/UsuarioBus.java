@@ -57,5 +57,19 @@ public class UsuarioBus {
 			throw new Exception(e.getMessage());
 		}
 	}
+	
+	public Boolean TrocarNivel(int id, int nivel) throws Exception
+	{
+		
+		try 
+		{
+			
+			return usuarioDAO.AlterarNivel(nivel==1? 0:1, id);
+			
+		} catch (Exception e) 
+		{
+			throw new Exception(e.getMessage());
+		}
+	}
 
 }

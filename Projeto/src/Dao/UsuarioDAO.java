@@ -231,4 +231,23 @@ public class UsuarioDAO {
 		}
 		return usuarioDto;
 	}
+	
+	public Boolean AlterarNivel(int nivel, int id)  throws Exception
+	{
+		try
+		{
+			if(!VerifiqueConexao())
+				return false;
+			
+			sql="UPDATE USUARIO SET NIVELACESSO=? WHERE IDUSUARIO=?";
+			pst=con.prepareStatement(sql);
+			pst.setInt(1, nivel);
+			pst.setInt(2, id);
+			
+			return pst.executeUpdate()>0? true: false;
+		}catch(Exception e)
+		{
+			throw new Exception("NÃOo foi possivel executar o comando "+e);
+		}
+	}
 }

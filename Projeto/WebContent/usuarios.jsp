@@ -114,9 +114,9 @@
       <td>${listas.cpf }</td>
       <td>${listas.dataNascimento }</td>
       <td>${listas.nivelAcesso }</td>
-      <td><form action="Projeto/EditarUsuario" method="POST" id="id">
- 			<button type="submit" value="${lista.id}" > Editar usuário</button>     
-      </form></td>
+      <td>
+ 			<a href="/Projeto/AtualizarUsuario?id=${listas.idUsuario}&nivel=${listas.nivelAcesso}" class="btn btn-primary">Troca Nivel Acesso</a>     
+      </td>
    </tr>
   
   </c:forEach>
